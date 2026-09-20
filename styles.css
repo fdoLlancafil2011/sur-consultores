@@ -410,6 +410,25 @@ img, svg { display: block; }
 .booking-contact { margin-top: 36px; font-size: 15px; color: #B7C0CC; }
 .booking-contact a { color: #fff; border-bottom: 1px solid var(--deep-line); transition: border-color .2s; }
 .booking-contact a:hover { border-color: #9FBFB2; }
+.booking-contact .whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  border-bottom: 0;
+  border: 1px solid var(--deep-line);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+}
+.booking-contact .whatsapp:hover { border-color: #9FBFB2; }
+.booking-contact .whatsapp svg {
+  width: 18px; height: 18px;
+  fill: none;
+  stroke: #9FBFB2;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .booking-form {
   background: var(--surface);
