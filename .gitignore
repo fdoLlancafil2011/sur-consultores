@@ -1,0 +1,16 @@
+# Archivos temporales de Google Drive y OneDrive
+.tmp.drivedownload/
+.tmp.driveupload/
+*.gdoc
+*.gsheet
+desktop.ini
+
+# Archivos del sistema
+Thumbs.db
+ehthumbs.db
+.DS_Store
+
+# Temporales de editores
+*.tmp
+*.bak
+*~

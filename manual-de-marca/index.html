@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sur Consultores · Manual de marca</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='32' fill='%23EDEAE3'/><g fill='none' stroke-linecap='round' stroke-linejoin='round'><path d='M19 23h26' stroke='%23BFC7C1' stroke-width='2.5'/><path d='M19 31 32 44 45 31' stroke='%236F9184' stroke-width='5'/></g></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:#FAF9F6; --surface:#FFF; --ink:#2A333B; --ink-2:#55606B; --muted:#858E99;
+    --line:#E8E5DF; --accent:#567468; --mark:#6F9184; --mark-soft:#C3CBC6;
+    --sand:#EDEAE3; --deep:#27333A; --error:#B4534A;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.6 "Inter", system-ui, sans-serif; padding:56px 24px 96px;
+  }
+  .wrap { max-width:940px; margin:0 auto; }
+  header.head { display:flex; align-items:center; gap:14px; margin-bottom:32px; }
+  h1 { font:600 32px/1.15 "Inter Tight", sans-serif; letter-spacing:-0.02em; margin:0; }
+  .sub { color:var(--ink-2); margin:0 0 8px; max-width:64ch; }
+  h2 {
+    font:600 14px/1.2 "Inter", sans-serif; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent); margin:56px 0 6px; padding-top:24px; border-top:1px solid var(--line);
+  }
+  h3 { font:600 21px/1.2 "Inter Tight", sans-serif; margin:0 0 6px; }
+  .h-note { color:var(--muted); font-size:14px; margin:0 0 20px; max-width:70ch; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+  .card { border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--surface); }
+  .stage { display:grid; place-items:center; padding:44px 24px; min-height:156px; }
+  .stage.dark { background:var(--deep); }
+  .stage.sand { background:var(--sand); }
+  .stage svg { max-width:100%; height:auto; }
+  .meta { border-top:1px solid var(--line); padding:14px 16px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .meta strong { font:500 14px "Inter", sans-serif; margin-right:auto; }
+  button {
+    border:1px solid var(--line); background:var(--bg); color:var(--ink);
+    font:500 13px "Inter", sans-serif; padding:7px 12px; border-radius:6px; cursor:pointer;
+    transition:border-color .2s, background .2s;
+  }
+  button:hover { border-color:var(--ink); background:var(--surface); }
+  .swatches { display:flex; flex-wrap:wrap; gap:12px; }
+  .sw { border:1px solid var(--line); border-radius:8px; overflow:hidden; width:158px; background:var(--surface); }
+  .sw i { display:block; height:60px; }
+  .sw span { display:block; padding:8px 10px; font:13px "Inter", sans-serif; }
+  .sw small { display:block; color:var(--muted); font-size:12px; }
+  .type-row { border:1px solid var(--line); border-radius:12px; background:var(--surface); padding:24px 28px; }
+  .type-row + .type-row { margin-top:12px; }
+  .type-row p { margin:0; }
+  .type-label { font:500 13px "Inter", sans-serif; color:var(--muted); margin-bottom:8px; }
+  .t1 { font:600 34px/1.15 "Inter Tight", sans-serif; letter-spacing:-0.02em; }
+  .t2 { font:400 20px/1.3 "Inter Tight", sans-serif; color:var(--ink-2); }
+  .t3 { font:400 16px/1.6 "Inter", sans-serif; color:var(--ink-2); }
+  .rules { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .rules ul { margin:0; padding-left:20px; color:var(--ink-2); font-size:15px; }
+  .rules li { margin-bottom:8px; }
+  .rules .ok h3 { color:var(--accent); }
+  .rules .no h3 { color:var(--error); }
+  .files { border:1px solid var(--line); border-radius:12px; background:var(--surface); overflow:hidden; }
+  .files li { display:flex; gap:16px; padding:14px 18px; font-size:15px; align-items:baseline; }
+  .files li + li { border-top:1px solid var(--line); }
+  .files code { font-size:13px; }
+  .files span { color:var(--muted); font-size:14px; margin-left:auto; text-align:right; }
+  ul.files { list-style:none; padding:0; }
+  code { background:var(--bg); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:13px; }
+  .note { color:var(--muted); font-size:14px; max-width:70ch; }
+  @media (max-width:640px) { .rules { grid-template-columns:1fr; } body { padding:32px 16px 72px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="head">
+    <svg viewBox="0 0 64 64" width="44" height="44" aria-hidden="true">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 20h36" stroke="#C3CBC6" stroke-width="3"/>
+        <path d="M14 30 32 48 50 30" stroke="#6F9184" stroke-width="6"/>
+      </g>
+    </svg>
+    <h1>Manual de marca</h1>
+  </header>
+  <p class="sub">
+    Sur Consultores. Marca de trazo fino en verde salvia y arena: el vértice apunta al sur
+    y la línea superior sugiere el horizonte. Los botones descargan PNG con fondo transparente.
+  </p>
+
+  <h2>Logo principal</h2>
+  <h3>Horizontal</h3>
+  <p class="h-note">Es la versión por defecto: web, presentaciones, firmas de correo y documentos.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 260 48" width="260" height="48" aria-label="Sur Consultores">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 15h27" stroke="#C3CBC6" stroke-width="2.25"/>
+            <path d="M6 22.5 19.5 36 33 22.5" stroke="#6F9184" stroke-width="4.5"/>
+          </g>
+          <text x="52" y="33" font-family="Inter Tight, Inter, sans-serif" font-size="30" letter-spacing="-0.45">
+            <tspan font-weight="600" fill="#2A333B">Sur</tspan><tspan dx="7" font-weight="400" fill="#858E99">Consultores</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="meta">
+        <strong>Fondo claro</strong>
+        <button data-dl="lockup" data-variant="light" data-h="96">PNG 1x</button>
+        <button data-dl="lockup" data-variant="light" data-h="192">PNG 2x</button>
+        <button data-dl="lockup" data-variant="light" data-h="384">PNG 4x</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="stage dark">
+        <svg viewBox="0 0 260 48" width="260" height="48" aria-label="Sur Consultores">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 15h27" stroke="#5E6E72" stroke-width="2.25"/>
+            <path d="M6 22.5 19.5 36 33 22.5" stroke="#9FBFB2" stroke-width="4.5"/>
+          </g>
+          <text x="52" y="33" font-family="Inter Tight, Inter, sans-serif" font-size="30" letter-spacing="-0.45">
+            <tspan font-weight="600" fill="#FFFFFF">Sur</tspan><tspan dx="7" font-weight="400" fill="#AEB8C0">Consultores</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="meta">
+        <strong>Fondo oscuro</strong>
+        <button data-dl="lockup" data-variant="dark" data-h="96">PNG 1x</button>
+        <button data-dl="lockup" data-variant="dark" data-h="192">PNG 2x</button>
+        <button data-dl="lockup" data-variant="dark" data-h="384">PNG 4x</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Isotipos</h2>
+  <p class="h-note">Solo la marca, para foto de perfil, favicon, sello o cuando el espacio es mínimo.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="stage">
+        <svg viewBox="0 0 64 64" width="88" height="88" aria-label="Sur Consultores">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 20h36" stroke="#C3CBC6" stroke-width="3"/>
+            <path d="M14 30 32 48 50 30" stroke="#6F9184" stroke-width="6"/>
+          </g>
+        </svg>
+      </div>
+      <div class="meta">
+        <strong>Transparente</strong>
+        <button data-dl="mark" data-variant="light" data-h="256">256 px</button>
+        <button data-dl="mark" data-variant="light" data-h="512">512 px</button>
+        <button data-dl="mark" data-variant="light" data-h="1024">1024 px</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="stage sand">
+        <svg viewBox="0 0 64 64" width="88" height="88" aria-label="Sur Consultores">
+          <circle cx="32" cy="32" r="32" fill="#EDEAE3"/>
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 23h26" stroke="#BFC7C1" stroke-width="2.5"/>
+            <path d="M19 31 32 44 45 31" stroke="#6F9184" stroke-width="5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="meta">
+        <strong>Círculo arena</strong>
+        <button data-dl="circle" data-variant="light" data-h="256">256 px</button>
+        <button data-dl="circle" data-variant="light" data-h="512">512 px</button>
+        <button data-dl="circle" data-variant="light" data-h="1024">1024 px</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="stage dark">
+        <svg viewBox="0 0 64 64" width="88" height="88" aria-label="Sur Consultores">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 20h36" stroke="#5E6E72" stroke-width="3"/>
+            <path d="M14 30 32 48 50 30" stroke="#9FBFB2" stroke-width="6"/>
+          </g>
+        </svg>
+      </div>
+      <div class="meta">
+        <strong>Fondo oscuro</strong>
+        <button data-dl="mark" data-variant="dark" data-h="256">256 px</button>
+        <button data-dl="mark" data-variant="dark" data-h="512">512 px</button>
+        <button data-dl="mark" data-variant="dark" data-h="1024">1024 px</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Paleta</h2>
+  <p class="h-note">
+    El salvia claro es para la marca y las superficies. El salvia oscuro es para botones y textos,
+    porque tiene el contraste suficiente para leerse bien sobre fondo claro.
+  </p>
+  <div class="swatches">
+    <div class="sw"><i style="background:#6F9184"></i><span>Salvia<small>#6F9184</small></span></div>
+    <div class="sw"><i style="background:#567468"></i><span>Salvia oscuro<small>#567468</small></span></div>
+    <div class="sw"><i style="background:#2A333B"></i><span>Pizarra<small>#2A333B</small></span></div>
+    <div class="sw"><i style="background:#858E99"></i><span>Gris texto<small>#858E99</small></span></div>
+    <div class="sw"><i style="background:#EDEAE3"></i><span>Arena<small>#EDEAE3</small></span></div>
+    <div class="sw"><i style="background:#FAF9F6;border-bottom:1px solid #E8E5DF"></i><span>Fondo hueso<small>#FAF9F6</small></span></div>
+  </div>
+
+  <h2>Tipografía</h2>
+  <p class="h-note">Inter Tight para títulos e Inter para textos. Ambas son gratuitas en Google Fonts.</p>
+  <div class="type-row">
+    <p class="type-label">Inter Tight SemiBold 600 · títulos y la palabra "Sur"</p>
+    <p class="t1">Equipos estables y preparados</p>
+  </div>
+  <div class="type-row">
+    <p class="type-label">Inter Tight Regular 400 · subtítulos y la palabra "Consultores"</p>
+    <p class="t2">Gestión de personas para el segmento operativo</p>
+  </div>
+  <div class="type-row">
+    <p class="type-label">Inter Regular 400 · textos corridos</p>
+    <p class="t3">Acompañamos a empresas de construcción, minería, energía y logística a atraer, desarrollar y retener a su personal operativo.</p>
+  </div>
+
+  <h2>Uso correcto</h2>
+  <div class="rules">
+    <div class="ok">
+      <h3>Sí</h3>
+      <ul>
+        <li>Deja un margen libre alrededor del logo igual al alto del vértice.</li>
+        <li>Tamaño mínimo: 24 px de alto el isotipo, 120 px de ancho el horizontal.</li>
+        <li>Sobre fondo oscuro o sobre foto, usa la versión clara.</li>
+        <li>Para imprenta, usa el SVG con el texto convertido a curvas, o un PNG de 4x.</li>
+      </ul>
+    </div>
+    <div class="no">
+      <h3>No</h3>
+      <ul>
+        <li>No lo estires ni lo deformes: mantén siempre la proporción.</li>
+        <li>No le cambies los colores ni uses degradados.</li>
+        <li>No le agregues sombras, contornos ni lo encierres en una caja.</li>
+        <li>No lo pongas sobre fondos de bajo contraste ni sobre zonas cargadas de una foto.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Archivos</h2>
+  <ul class="files">
+    <li><code>sur-logo-horizontal.svg</code> <span>Logo completo, fondo claro</span></li>
+    <li><code>sur-logo-horizontal-blanco.svg</code> <span>Logo completo, fondo oscuro</span></li>
+    <li><code>sur-isotipo.svg</code> <span>Solo la marca, transparente</span></li>
+    <li><code>sur-isotipo-circulo.svg</code> <span>Marca sobre círculo arena, para avatar o favicon</span></li>
+    <li><code>sur-isotipo-blanco.svg</code> <span>Solo la marca, fondo oscuro</span></li>
+  </ul>
+  <p class="note" style="margin-top:14px">
+    Los SVG del logo horizontal llevan el nombre como texto, no como curvas. Si lo abres en un
+    equipo sin la fuente Inter Tight instalada, la letra se verá distinta: en ese caso usa el PNG.
+  </p>
+
+</div>
+
+<script>
+const C = {
+  light: { mark:"#6F9184", soft:"#C3CBC6", sur:"#2A333B", cons:"#858E99" },
+  dark:  { mark:"#9FBFB2", soft:"#5E6E72", sur:"#FFFFFF", cons:"#AEB8C0" },
+};
+
+// Isotipo: mismas coordenadas que sur-isotipo.svg (rejilla de 64), escaladas.
+function drawMark(ctx, x, y, size, variant) {
+  const u = size / 64;
+  const c = C[variant];
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+
+  ctx.strokeStyle = c.soft;
+  ctx.lineWidth = 3 * u;
+  ctx.beginPath();
+  ctx.moveTo(x + 14 * u, y + 20 * u);
+  ctx.lineTo(x + 50 * u, y + 20 * u);
+  ctx.stroke();
+
+  ctx.strokeStyle = c.mark;
+  ctx.lineWidth = 6 * u;
+  ctx.beginPath();
+  ctx.moveTo(x + 14 * u, y + 30 * u);
+  ctx.lineTo(x + 32 * u, y + 48 * u);
+  ctx.lineTo(x + 50 * u, y + 30 * u);
+  ctx.stroke();
+}
+
+// Marca del logo horizontal: coordenadas de sur-logo-horizontal.svg (alto 48).
+function drawLockupMark(ctx, s, variant) {
+  const c = C[variant];
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  const line = (pts, color, w) => {
+    ctx.strokeStyle = color;
+    ctx.lineWidth = w * s;
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => (i ? ctx.lineTo(x * s, y * s) : ctx.moveTo(x * s, y * s)));
+    ctx.stroke();
+  };
+  line([[6, 15], [33, 15]], c.soft, 2.25);
+  line([[6, 22.5], [19.5, 36], [33, 22.5]], c.mark, 4.5);
+}
+
+function download(canvas, name) {
+  canvas.toBlob((blob) => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = name;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }, "image/png");
+}
+
+const suffix = (variant) => (variant === "dark" ? "blanco" : "color");
+
+function exportMark(variant, size) {
+  const c = document.createElement("canvas");
+  c.width = c.height = size;
+  drawMark(c.getContext("2d"), 0, 0, size, variant);
+  download(c, `sur-isotipo-${suffix(variant)}-${size}.png`);
+}
+
+function exportCircle(variant, size) {
+  const c = document.createElement("canvas");
+  c.width = c.height = size;
+  const ctx = c.getContext("2d");
+  ctx.fillStyle = "#EDEAE3";
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+  ctx.fill();
+  const inner = size * 0.78;
+  drawMark(ctx, (size - inner) / 2, (size - inner) / 2, inner, "light");
+  download(c, `sur-isotipo-circulo-${size}.png`);
+}
+
+async function exportLockup(variant, height) {
+  await document.fonts.ready;
+  const c = C[variant];
+  const s = height / 48;
+  const boldFont = `600 ${30 * s}px "Inter Tight", sans-serif`;
+  const lightFont = `400 ${30 * s}px "Inter Tight", sans-serif`;
+
+  const m = document.createElement("canvas").getContext("2d");
+  m.font = boldFont;
+  const wSur = m.measureText("Sur").width;
+  m.font = lightFont;
+  const wCons = m.measureText("Consultores").width;
+
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.ceil(52 * s + wSur + 7 * s + wCons + 6 * s);
+  canvas.height = height;
+  const ctx = canvas.getContext("2d");
+
+  drawLockupMark(ctx, s, variant);
+
+  ctx.textBaseline = "alphabetic";
+  ctx.font = boldFont;
+  ctx.fillStyle = c.sur;
+  ctx.fillText("Sur", 52 * s, 33 * s);
+  ctx.font = lightFont;
+  ctx.fillStyle = c.cons;
+  ctx.fillText("Consultores", 52 * s + wSur + 7 * s, 33 * s);
+
+  download(canvas, `sur-logo-horizontal-${suffix(variant)}-${height}px.png`);
+}
+
+document.querySelectorAll("button[data-dl]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const { dl, variant, h } = btn.dataset;
+    if (dl === "mark") exportMark(variant, Number(h));
+    else if (dl === "circle") exportCircle(variant, Number(h));
+    else exportLockup(variant, Number(h));
+  });
+});
+</script>
+</body>
+</html>

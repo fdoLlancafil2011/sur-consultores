@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sur Consultores · Gestión de personas para operaciones</title>
+  <meta name="description" content="Consultora en gestión de personas para equipos operativos en construcción, minería, energía y logística. Agenda una reunión de diagnóstico." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='32' fill='%23EDEAE3'/><g fill='none' stroke-linecap='round' stroke-linejoin='round'><path d='M19 23h26' stroke='%23BFC7C1' stroke-width='2.5'/><path d='M19 31 32 44 45 31' stroke='%236F9184' stroke-width='5'/></g></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Sur Consultores, inicio">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <path class="horizon" d="M14 20h36" />
+          <path class="chevron" d="M14 30 32 48 50 30" />
+        </svg>
+        <span class="brand-name">Sur <span>Consultores</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#industrias">Industrias</a>
+        <a href="#metodologia">Metodología</a>
+        <a href="#preguntas">Preguntas</a>
+      </nav>
+
+      <a href="#agendar" class="btn btn-primary btn-sm header-cta">Agendar reunión</a>
+
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil" hidden>
+      <a href="#servicios">Servicios</a>
+      <a href="#industrias">Industrias</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#agendar" class="btn btn-primary">Agendar reunión</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <svg class="hero-contours" viewBox="0 0 800 600" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M420 300c0-70 60-120 140-118s150 52 146 124-70 122-150 118-136-54-136-124z"/>
+          <path d="M370 300c0-100 85-170 195-168s205 75 200 175-100 172-210 168-185-75-185-175z"/>
+          <path d="M320 300c0-130 110-222 250-218s262 98 256 228-128 224-268 220-238-100-238-230z"/>
+          <path d="M270 302c0-160 135-274 305-270s318 122 310 282-156 276-326 272-289-124-289-284z"/>
+          <path d="M220 304c0-190 160-326 360-322s374 146 364 336-184 328-384 324-340-148-340-338z"/>
+          <path d="M170 306c0-220 185-378 415-374s430 170 418 390-212 380-442 376-391-172-391-392z"/>
+        </g>
+      </svg>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Gestión de personas · Segmento operativo</p>
+          <h1>Equipos estables y preparados para operar donde el trabajo es exigente.</h1>
+          <p class="lead">
+            Acompañamos a empresas de construcción, minería, energía y logística a atraer,
+            desarrollar y retener a su personal operativo, con soluciones pensadas para
+            faenas, turnos y terreno.
+          </p>
+          <div class="hero-actions">
+            <a href="#agendar" class="btn btn-primary">Agendar una reunión</a>
+            <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Reunión de diagnóstico">
+          <p class="hero-card-label">Reunión de diagnóstico</p>
+          <ul class="hero-card-list">
+            <li><span>Duración</span><strong>30 minutos</strong></li>
+            <li><span>Modalidad</span><strong>Online o presencial</strong></li>
+            <li><span>Resultado</span><strong>Prioridades y próximos pasos</strong></li>
+          </ul>
+          <a href="#agendar" class="btn btn-dark btn-block">Elegir fecha</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ DESAFÍOS ============ -->
+    <section class="section challenges" aria-labelledby="desafios-title">
+      <div class="container">
+        <div class="section-head split">
+          <h2 id="desafios-title">Lo que vemos en terreno</h2>
+          <p>Los problemas de personas en la operación no se resuelven con soluciones de oficina. Partimos por entender cómo se trabaja en tu faena.</p>
+        </div>
+        <ul class="challenge-list">
+          <li><span class="num">01</span><div><h3>Rotación alta</h3><p>Personal que se va en los primeros meses y encarece cada contratación.</p></div></li>
+          <li><span class="num">02</span><div><h3>Vacantes difíciles</h3><p>Cargos críticos y zonas remotas donde encontrar talento toma semanas.</p></div></li>
+          <li><span class="num">03</span><div><h3>Supervisión sin herramientas</h3><p>Buenos técnicos que asumen jefaturas sin preparación para liderar.</p></div></li>
+          <li><span class="num">04</span><div><h3>Clima y ausentismo</h3><p>Sistemas de turnos que desgastan y afectan la continuidad operacional.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="section services" id="servicios" aria-labelledby="servicios-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Servicios</p>
+          <h2 id="servicios-title">Soluciones para todo el ciclo del trabajador operativo</h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg>
+            <h3>Reclutamiento y selección operativa</h3>
+            <p>Procesos masivos y de cargos críticos: operadores, mantenedores, conductores y técnicos, con evaluación de competencias en terreno.</p>
+          </article>
+          <article class="service">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h12"/><path d="m12 6 6 6-6 6"/><path d="M20 4v16"/></svg>
+            <h3>Onboarding e inducción</h3>
+            <p>Programas de incorporación que reducen la rotación temprana y aceleran la curva de aprendizaje en faena.</p>
+          </article>
+          <article class="service">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+            <h3>Liderazgo de supervisores</h3>
+            <p>Formación práctica para jefes de turno y supervisores: gestión de equipos, conversaciones difíciles y seguridad conductual.</p>
+          </article>
+          <article class="service">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m8 14 4-4 3 3 5-5"/></svg>
+            <h3>Clima, retención y ausentismo</h3>
+            <p>Diagnósticos por faena y turno, con planes de acción medibles y seguimiento junto a las jefaturas.</p>
+          </article>
+          <article class="service">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+            <h3>Relaciones laborales y cumplimiento</h3>
+            <p>Apoyo en negociación colectiva, reglamentos internos y gestión de contratistas alineada a la normativa vigente.</p>
+          </article>
+          <article class="service">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            <h3>Estructura y compensaciones</h3>
+            <p>Descripciones de cargo, bandas salariales, bonos de producción y sistemas de turnos que sostienen la operación.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INDUSTRIAS ============ -->
+    <section class="section industries" id="industrias" aria-labelledby="industrias-title">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <p class="eyebrow">Industrias</p>
+            <h2 id="industrias-title">Conocemos la realidad de la operación</h2>
+          </div>
+          <p>Faenas remotas, sistemas de turnos, contratistas y altos estándares de seguridad. Adaptamos cada solución al contexto de tu industria.</p>
+        </div>
+
+        <ul class="industry-list">
+          <li><span>Construcción</span><small>Obras, montaje e infraestructura</small></li>
+          <li><span>Minería</span><small>Faenas, plantas y servicios mineros</small></li>
+          <li><span>Energía</span><small>Generación, transmisión y renovables</small></li>
+          <li><span>Logística</span><small>Centros de distribución y transporte</small></li>
+          <li><span>Manufactura</span><small>Plantas productivas e industriales</small></li>
+          <li><span>Servicios industriales</span><small>Mantención, aseo industrial y soporte</small></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ METODOLOGÍA ============ -->
+    <section class="section method" id="metodologia" aria-labelledby="metodologia-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Metodología</p>
+          <h2 id="metodologia-title">Cómo trabajamos</h2>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <h3>Diagnóstico</h3>
+            <p>Levantamos información en terreno con trabajadores, supervisores y gerencia.</p>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <h3>Diseño</h3>
+            <p>Definimos un plan concreto, con indicadores y responsables claros.</p>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <h3>Implementación</h3>
+            <p>Ejecutamos junto a tu equipo, respetando los ritmos de la operación.</p>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <h3>Seguimiento</h3>
+            <p>Medimos resultados y ajustamos hasta que los cambios se sostengan.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ AGENDAR ============ -->
+    <section class="section booking" id="agendar" aria-labelledby="agendar-title">
+      <div class="container booking-grid">
+        <div class="booking-intro">
+          <p class="eyebrow eyebrow-light">Agendar reunión</p>
+          <h2 id="agendar-title">Conversemos sobre tu operación</h2>
+          <p>En 30 minutos revisamos tus desafíos de personas y te proponemos por dónde empezar. Te confirmamos la reunión dentro de un día hábil.</p>
+
+          <ul class="booking-points">
+            <li>Sin compromiso de contratación</li>
+            <li>Online o presencial en tus instalaciones</li>
+            <li>Conversación con un consultor senior</li>
+          </ul>
+
+          <div class="booking-contact">
+            <p>¿Prefieres escribirnos directamente?</p>
+            <a href="mailto:contacto@surconsultores.cl">contacto@surconsultores.cl</a>
+          </div>
+        </div>
+
+        <form class="booking-form" id="booking-form" novalidate>
+          <div class="form-body">
+            <div class="field-row">
+              <div class="field">
+                <label for="nombre">Nombre y apellido</label>
+                <input id="nombre" name="nombre" type="text" autocomplete="name" required />
+                <span class="error" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="empresa">Empresa</label>
+                <input id="empresa" name="empresa" type="text" autocomplete="organization" required />
+                <span class="error" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="email">Correo corporativo</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+                <span class="error" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+56 9" required />
+                <span class="error" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="industria">Industria</label>
+                <select id="industria" name="industria" required>
+                  <option value="" selected disabled>Selecciona</option>
+                  <option>Construcción</option>
+                  <option>Minería</option>
+                  <option>Energía</option>
+                  <option>Logística</option>
+                  <option>Manufactura</option>
+                  <option>Servicios industriales</option>
+                  <option>Otra</option>
+                </select>
+                <span class="error" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="dotacion">Dotación operativa</label>
+                <select id="dotacion" name="dotacion" required>
+                  <option value="" selected disabled>Selecciona</option>
+                  <option>Menos de 50</option>
+                  <option>50 a 200</option>
+                  <option>201 a 1.000</option>
+                  <option>Más de 1.000</option>
+                </select>
+                <span class="error" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <fieldset class="field">
+              <legend>Tema principal</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="tema" value="Reclutamiento" required /><span>Reclutamiento</span></label>
+                <label class="chip"><input type="radio" name="tema" value="Rotación y clima" /><span>Rotación y clima</span></label>
+                <label class="chip"><input type="radio" name="tema" value="Liderazgo" /><span>Liderazgo</span></label>
+                <label class="chip"><input type="radio" name="tema" value="Relaciones laborales" /><span>Relaciones laborales</span></label>
+                <label class="chip"><input type="radio" name="tema" value="Otro" /><span>Otro</span></label>
+              </div>
+              <span class="error" aria-live="polite"></span>
+            </fieldset>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="fecha">Fecha preferida</label>
+                <input id="fecha" name="fecha" type="date" required />
+                <span class="error" aria-live="polite"></span>
+              </div>
+              <fieldset class="field">
+                <legend>Horario</legend>
+                <div class="segmented">
+                  <label><input type="radio" name="horario" value="Mañana" checked /><span>Mañana</span></label>
+                  <label><input type="radio" name="horario" value="Tarde" /><span>Tarde</span></label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Cuéntanos brevemente tu desafío <small>(opcional)</small></label>
+              <textarea id="mensaje" name="mensaje" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Solicitar reunión</button>
+            <p class="form-note">Usaremos tus datos solo para coordinar la reunión.</p>
+          </div>
+
+          <div class="form-success" hidden tabindex="-1">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+            <h3>¡Solicitud recibida!</h3>
+            <p>Gracias, <span data-name></span>. Te contactaremos dentro de un día hábil para confirmar la fecha y hora de la reunión.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section faq" id="preguntas" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div class="section-head">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2 id="faq-title">Antes de agendar</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>¿La primera reunión tiene costo?</summary>
+            <p>No. La reunión de diagnóstico es gratuita y sirve para entender tu contexto y evaluar si podemos ayudarte.</p>
+          </details>
+          <details>
+            <summary>¿Trabajan en faenas fuera de la ciudad?</summary>
+            <p>Sí. Nuestro trabajo se hace en terreno, adaptándonos a los sistemas de turnos y a la logística de cada faena.</p>
+          </details>
+          <details>
+            <summary>¿Pueden trabajar con empresas contratistas?</summary>
+            <p>Sí. Apoyamos tanto a empresas mandantes como a contratistas y subcontratistas que prestan servicios en la operación.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto dura un proyecto típico?</summary>
+            <p>Depende del alcance. Un diagnóstico suele tomar de 3 a 6 semanas; los programas de implementación se definen en conjunto según tus objetivos.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#top" class="brand brand-footer" aria-label="Sur Consultores, volver arriba">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <path class="horizon" d="M14 20h36" />
+          <path class="chevron" d="M14 30 32 48 50 30" />
+        </svg>
+        <span class="brand-name">Sur <span>Consultores</span></span>
+      </a>
+      <div class="footer-links">
+        <a href="mailto:contacto@surconsultores.cl">contacto@surconsultores.cl</a>
+        <a href="tel:+56900000000">+56 9 0000 0000</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="copyright">© <span id="year"></span> Sur Consultores. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- CTA fija en móvil -->
+  <a href="#agendar" class="mobile-cta btn btn-primary" aria-hidden="true" tabindex="-1">Agendar reunión</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
