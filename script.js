@@ -2,10 +2,11 @@
    Sur Consultores — Interacciones
    ========================================================== */
 
-// Endpoint que recibe las solicitudes de reunión (ej. Formspree, Getform,
-// un webhook de Make/Zapier o tu propio backend). Si queda vacío, el
-// formulario solo muestra el mensaje de confirmación.
-const FORM_ENDPOINT = "";
+// Dirección de la aplicación web de Apps Script que recibe las solicitudes
+// y las anota en la planilla de Google. Si queda vacía, el formulario solo
+// muestra el mensaje de confirmación, sin enviar nada.
+const FORM_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbwfvXfzC4RNslFam_Nv22-R51k2v3U95wz_OinqW7C1gs3BpasNLWV-dzSMzFly0qnPBg/exec";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -155,12 +156,16 @@ form.addEventListener("submit", async (e) => {
 
   try {
     if (FORM_ENDPOINT) {
+      // Se envía como texto plano a propósito: así el navegador no hace la
+      // consulta previa (preflight) que Apps Script no sabe responder.
       const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const respuesta = await res.json();
+      if (!respuesta.ok) throw new Error(respuesta.error || "Respuesta no válida");
     } else {
       console.info("[Sur Consultores] Configura FORM_ENDPOINT en script.js. Datos:", data);
       await new Promise((r) => setTimeout(r, 600));

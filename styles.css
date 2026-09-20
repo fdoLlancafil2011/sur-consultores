@@ -467,6 +467,15 @@ fieldset.field legend { margin-bottom: 8px; }
 .error { font-size: 13px; color: var(--error); min-height: 0; }
 .error:empty { display: none; }
 
+/* campo trampa contra robots */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* chips */
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip input, .segmented input { position: absolute; opacity: 0; pointer-events: none; }

@@ -311,6 +311,12 @@
               <textarea id="mensaje" name="mensaje" rows="3"></textarea>
             </div>
 
+            <!-- Campo trampa: invisible para las personas, los robots lo rellenan -->
+            <div class="honeypot" aria-hidden="true">
+              <label for="sitio_web">No completar este campo</label>
+              <input id="sitio_web" name="sitio_web" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
             <button type="submit" class="btn btn-primary btn-block">Solicitar reunión</button>
             <p class="form-note">Usaremos tus datos solo para coordinar la reunión.</p>
           </div>
