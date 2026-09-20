@@ -175,6 +175,6 @@ form.addEventListener("submit", async (e) => {
     console.error(err);
     button.disabled = false;
     button.textContent = "Solicitar reunión";
-    alert("No pudimos enviar tu solicitud. Inténtalo nuevamente o escríbenos a contacto@surconsultores.cl.");
+    alert("No pudimos enviar tu solicitud. Inténtalo nuevamente o escríbenos a fllancafil@surconsultores.org.");
   }
 });
