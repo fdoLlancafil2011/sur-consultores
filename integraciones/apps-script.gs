@@ -309,3 +309,145 @@ function responder(objeto) {
     ContentService.MimeType.JSON
   );
 }
+
+/* ---------- Resumen diario por correo ---------- */
+
+// Destinatario y horas (de 0 a 23, en la zona horaria del proyecto) del resumen.
+// Se envía de lunes a viernes; el del lunes incluye lo llegado el fin de semana.
+const CORREO_RESUMEN = "fdollancafil@outlook.com";
+const HORAS_RESUMEN = [8, 20];
+
+/**
+ * Ejecutar una sola vez desde el editor para programar el resumen. Si se
+ * vuelve a ejecutar, reemplaza la programación anterior en vez de duplicarla.
+ */
+function instalarResumenDiario() {
+  ScriptApp.getProjectTriggers()
+    .filter((t) => t.getHandlerFunction() === "enviarResumen")
+    .forEach((t) => ScriptApp.deleteTrigger(t));
+
+  HORAS_RESUMEN.forEach((hora) => {
+    ScriptApp.newTrigger("enviarResumen").timeBased().everyDays(1).atHour(hora).nearMinute(0).create();
+  });
+}
+
+/**
+ * Envía las reservas Petrinovic desde hoy en adelante, agrupadas por día, y
+ * las solicitudes de reunión llegadas desde el resumen anterior.
+ */
+function enviarResumen() {
+  const zona = Session.getScriptTimeZone();
+  const ahora = new Date();
+
+  // Sábado (6) y domingo (7): no se envía ni se mueve la marca del último resumen.
+  if (Number(Utilities.formatDate(ahora, zona, "u")) >= 6) return;
+
+  const propiedades = PropertiesService.getScriptProperties();
+  const anterior = new Date(Number(propiedades.getProperty("ultimoResumen")) || ahora.getTime() - 12 * 3600 * 1000);
+  const hoy = Utilities.formatDate(ahora, zona, "yyyy-MM-dd");
+
+  // Reservas vigentes, agrupadas por día
+  const hojaReservas = obtenerHojaReservas();
+  const filasReservas = hojaReservas.getLastRow() - 1;
+  const reservas = filasReservas < 1 ? [] : hojaReservas
+    .getRange(2, 1, filasReservas, COLUMNAS_RESERVAS.length)
+    .getValues()
+    .map((fila) => ({
+      recibida: fila[0],
+      dia: fila[1] instanceof Date ? Utilities.formatDate(fila[1], zona, "yyyy-MM-dd") : String(fila[1]).trim(),
+      servicio: fila[2],
+      cupos: Number(fila[3]) || 0,
+      empresa: fila[4],
+      rut: fila[5],
+      contacto: fila[6],
+      telefono: fila[7],
+      correo: fila[8],
+      estado: String(fila[10]).trim(),
+    }))
+    .filter((r) => r.dia >= hoy && r.estado !== ESTADO_ANULADA)
+    .sort((a, b) => (a.dia < b.dia ? -1 : a.dia > b.dia ? 1 : 0));
+
+  const nuevas = reservas.filter((r) => r.recibida instanceof Date && r.recibida > anterior).length;
+
+  // Solicitudes de reunión nuevas
+  const hojaSolicitudes = obtenerHoja();
+  const filasSolicitudes = hojaSolicitudes.getLastRow() - 1;
+  const solicitudes = filasSolicitudes < 1 ? [] : hojaSolicitudes
+    .getRange(2, 1, filasSolicitudes, COLUMNAS.length)
+    .getValues()
+    .filter((fila) => fila[0] instanceof Date && fila[0] > anterior);
+
+  const celda = "padding:6px 10px;border-bottom:1px solid #E8E5DF;text-align:left;vertical-align:top;white-space:nowrap;";
+  const titulo = "font-family:Arial,sans-serif;color:#2A333B;margin:24px 0 8px;";
+  const html = [];
+
+  html.push('<div style="font-family:Arial,sans-serif;font-size:14px;color:#2A333B;">');
+  html.push("<p>Resumen de la planilla de Sur Consultores al " +
+    Utilities.formatDate(ahora, zona, "dd-MM-yyyy 'a las' HH:mm") + ".</p>");
+
+  html.push('<h3 style="' + titulo + '">Reservas Petrinovic desde hoy (' + reservas.length +
+    (nuevas ? ", " + nuevas + (nuevas === 1 ? " nueva" : " nuevas") : "") + ")</h3>");
+  if (reservas.length === 0) {
+    html.push("<p>No hay reservas vigentes.</p>");
+  } else {
+    html.push('<table style="border-collapse:collapse;font-size:13px;">');
+    html.push("<tr>" + ["Día", "Servicio", "Cupos", "Empresa", "RUT", "Contacto", "Teléfono", "Correo", "Estado"]
+      .map((t) => '<th style="' + celda + 'background:#EDEAE3;">' + t + "</th>").join("") + "</tr>");
+
+    let diaActual = null;
+    reservas.forEach((r) => {
+      if (r.dia !== diaActual) {
+        diaActual = r.dia;
+        const tomados = reservas.filter((x) => x.dia === r.dia).reduce((s, x) => s + x.cupos, 0);
+        const fecha = Utilities.formatDate(new Date(r.dia + "T12:00:00"), zona, "dd-MM-yyyy");
+        html.push('<tr><td colspan="9" style="' + celda + 'background:#EAF0ED;font-weight:bold;">' + fecha +
+          " — " + tomados + " de " + CUPOS_POR_DIA + " cupos tomados</td></tr>");
+      }
+      const esNueva = r.recibida instanceof Date && r.recibida > anterior;
+      html.push("<tr>" + [
+        Utilities.formatDate(new Date(r.dia + "T12:00:00"), zona, "dd-MM") + (esNueva ? ' <b style="color:#567468;">Nueva</b>' : ""),
+        escaparHtml(r.servicio), r.cupos, escaparHtml(r.empresa), escaparHtml(r.rut), escaparHtml(r.contacto),
+        escaparHtml(r.telefono), escaparHtml(r.correo), escaparHtml(r.estado),
+      ].map((v) => '<td style="' + celda + '">' + v + "</td>").join("") + "</tr>");
+    });
+    html.push("</table>");
+  }
+
+  html.push('<h3 style="' + titulo + '">Solicitudes de reunión nuevas (' + solicitudes.length + ")</h3>");
+  if (solicitudes.length === 0) {
+    html.push("<p>No llegaron solicitudes nuevas desde el resumen anterior.</p>");
+  } else {
+    html.push('<table style="border-collapse:collapse;font-size:13px;">');
+    html.push("<tr>" + ["Recibida", "Nombre", "Empresa", "Correo", "Teléfono", "Tema", "Fecha preferida"]
+      .map((t) => '<th style="' + celda + 'background:#EDEAE3;">' + t + "</th>").join("") + "</tr>");
+    solicitudes.forEach((f) => {
+      html.push("<tr>" + [
+        Utilities.formatDate(f[0], zona, "dd-MM HH:mm"), escaparHtml(f[1]), escaparHtml(f[2]), escaparHtml(f[3]),
+        escaparHtml(f[4]), escaparHtml(f[7]), (f[8] instanceof Date ? Utilities.formatDate(f[8], zona, "dd-MM-yyyy") : escaparHtml(f[8])) + " (" + escaparHtml(f[9]) + ")",
+      ].map((v) => '<td style="' + celda + '">' + v + "</td>").join("") + "</tr>");
+    });
+    html.push("</table>");
+  }
+
+  html.push('<p style="margin-top:24px;"><a href="' + SpreadsheetApp.getActiveSpreadsheet().getUrl() +
+    '" style="color:#567468;">Abrir la planilla</a></p></div>');
+
+  MailApp.sendEmail({
+    to: CORREO_RESUMEN,
+    subject: "Resumen Sur Consultores — " + Utilities.formatDate(ahora, zona, "dd-MM HH:mm") +
+      " — " + reservas.length + (reservas.length === 1 ? " reserva, " : " reservas, ") +
+      solicitudes.length + (solicitudes.length === 1 ? " solicitud nueva" : " solicitudes nuevas"),
+    htmlBody: html.join(""),
+    name: "Sur Consultores",
+  });
+
+  propiedades.setProperty("ultimoResumen", String(ahora.getTime()));
+}
+
+function escaparHtml(valor) {
+  return String(valor == null ? "" : valor)
+    .replace(/^'/, "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
