@@ -48,7 +48,7 @@ function setMenu(open) {
 }
 toggle.addEventListener("click", () => setMenu(mobileNav.hidden));
 mobileNav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
-window.addEventListener("resize", () => { if (window.innerWidth > 820) setMenu(false); });
+window.addEventListener("resize", () => { if (window.innerWidth > 980) setMenu(false); });
 
 /* ---------- Animación de aparición ---------- */
 const revealTargets = document.querySelectorAll(
