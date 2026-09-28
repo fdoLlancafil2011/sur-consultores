@@ -263,7 +263,7 @@ function enviarAvisoReserva(datos, cupos) {
     opciones.replyTo = datos.email;
   }
 
-  MailApp.sendEmail(
+  GmailApp.sendEmail(
     CORREO_AVISO,
     "Reserva Petrinovic — " + cuposTexto + " el " + diaTexto + " — " + empresa,
     cuerpo,
@@ -305,7 +305,7 @@ function enviarConfirmacionCliente(datos, cupos) {
     "surconsultores.org",
   ].join("\n");
 
-  MailApp.sendEmail(correo, "Recibimos tu reserva — " + cuposTexto + " el " + diaCorto, cuerpo, {
+  GmailApp.sendEmail(correo, "Recibimos tu reserva — " + cuposTexto + " el " + diaCorto, cuerpo, {
     name: "Sur Consultores",
     replyTo: CORREO_AVISO,
   });
@@ -339,7 +339,7 @@ function enviarAviso(datos) {
     opciones.replyTo = datos.email;
   }
 
-  MailApp.sendEmail(CORREO_AVISO, "Nueva solicitud de reunión — " + empresa, cuerpo, opciones);
+  GmailApp.sendEmail(CORREO_AVISO, "Nueva solicitud de reunión — " + empresa, cuerpo, opciones);
 }
 
 /**
@@ -479,11 +479,11 @@ function enviarResumen() {
   html.push('<p style="margin-top:24px;"><a href="' + SpreadsheetApp.getActiveSpreadsheet().getUrl() +
     '" style="color:#567468;">Abrir la planilla</a></p></div>');
 
-  MailApp.sendEmail({
-    to: CORREO_RESUMEN,
-    subject: "Resumen Sur Consultores — " + Utilities.formatDate(ahora, zona, "dd-MM HH:mm") +
-      " — " + reservas.length + (reservas.length === 1 ? " reserva, " : " reservas, ") +
-      solicitudes.length + (solicitudes.length === 1 ? " solicitud nueva" : " solicitudes nuevas"),
+  const asunto = "Resumen Sur Consultores — " + Utilities.formatDate(ahora, zona, "dd-MM HH:mm") +
+    " — " + reservas.length + (reservas.length === 1 ? " reserva, " : " reservas, ") +
+    solicitudes.length + (solicitudes.length === 1 ? " solicitud nueva" : " solicitudes nuevas");
+
+  GmailApp.sendEmail(CORREO_RESUMEN, asunto, "Abre este correo en un lector que muestre HTML.", {
     htmlBody: html.join(""),
     name: "Sur Consultores",
   });
