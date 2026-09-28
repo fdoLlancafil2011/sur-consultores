@@ -28,6 +28,7 @@ const COLUMNAS = [
   "Horario",
   "Mensaje",
   "Estado",
+  "Origen",
 ];
 
 /**
@@ -57,6 +58,7 @@ function doPost(e) {
       comoTexto(datos.horario),
       comoTexto(datos.mensaje),
       "Nuevo",
+      comoTexto(datos.origen || "Página web"),
     ]);
 
     enviarAviso(datos);
@@ -86,6 +88,12 @@ function obtenerHoja() {
     hoja.setColumnWidth(1, 160);
     hoja.setColumnWidth(11, 320);
   }
+  // Planillas creadas antes de agregar una columna: completa los títulos que falten.
+  const titulos = hoja.getRange(1, 1, 1, COLUMNAS.length);
+  const actuales = titulos.getValues()[0];
+  if (actuales.some((valor, i) => valor !== COLUMNAS[i])) {
+    titulos.setValues([COLUMNAS]).setFontWeight("bold");
+  }
   return hoja;
 }
 
@@ -102,6 +110,7 @@ function enviarAviso(datos) {
     "Dotación:         " + (datos.dotacion || "-"),
     "Tema principal:   " + (datos.tema || "-"),
     "Fecha preferida:  " + (datos.fecha || "-") + " (" + (datos.horario || "-") + ")",
+    "Origen:           " + (datos.origen || "Página web"),
     "",
     "Mensaje:",
     datos.mensaje || "(sin mensaje)",

@@ -8,6 +8,12 @@
 const FORM_ENDPOINT =
   "https://script.google.com/macros/s/AKfycbwfvXfzC4RNslFam_Nv22-R51k2v3U95wz_OinqW7C1gs3BpasNLWV-dzSMzFly0qnPBg/exec";
 
+// Por dónde llegó la persona, según el parámetro ?origen= del enlace. El
+// mensaje de bienvenida de WhatsApp enlaza con ?origen=whatsapp#agendar.
+const ORIGENES = { whatsapp: "WhatsApp", linkedin: "LinkedIn" };
+const origenParam = (new URLSearchParams(location.search).get("origen") || "").trim().toLowerCase();
+const ORIGEN = origenParam ? ORIGENES[origenParam] || origenParam.slice(0, 40) : "Página web";
+
 document.getElementById("year").textContent = new Date().getFullYear();
 
 /* ---------- Header con borde al hacer scroll ---------- */
@@ -151,6 +157,7 @@ form.addEventListener("submit", async (e) => {
 
   const button = form.querySelector('button[type="submit"]');
   const data = Object.fromEntries(new FormData(form));
+  data.origen = ORIGEN;
   button.disabled = true;
   button.textContent = "Enviando…";
 
