@@ -176,6 +176,13 @@ function registrarReserva(datos) {
   }
 
   enviarAvisoReserva(datos, cupos);
+
+  // La reserva ya quedó anotada: un correo de cliente inválido no debe anularla.
+  try {
+    enviarConfirmacionCliente(datos, cupos);
+  } catch (error) {
+    console.error("No se pudo enviar la confirmación al cliente: " + error);
+  }
   return { ok: true, reserva: true };
 }
 
@@ -262,6 +269,46 @@ function enviarAvisoReserva(datos, cupos) {
     cuerpo,
     opciones
   );
+}
+
+const DIAS_SEMANA = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
+  "septiembre", "octubre", "noviembre", "diciembre"];
+
+/** Acuse de recibo para la empresa que reservó, al correo que dejó en el formulario. */
+function enviarConfirmacionCliente(datos, cupos) {
+  const correo = String(datos.email || "").trim();
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(correo)) return;
+
+  const dia = new Date(datos.fecha + "T12:00:00");
+  const diaLargo = DIAS_SEMANA[dia.getDay()] + " " + dia.getDate() + " de " + MESES[dia.getMonth()];
+  const diaCorto = Utilities.formatDate(dia, Session.getScriptTimeZone(), "dd-MM-yyyy");
+  const cuposTexto = cupos + (cupos === 1 ? " cupo" : " cupos");
+  const nombre = String(datos.nombre || "").trim().split(/\s+/)[0];
+
+  const cuerpo = [
+    "Hola" + (nombre ? " " + nombre : "") + ",",
+    "",
+    "Tu solicitud de reserva quedó ingresada en nuestro sistema:",
+    "",
+    "Servicio:   " + (datos.servicio || "-"),
+    "Día:        " + diaLargo,
+    "Cupos:      " + cupos,
+    "Empresa:    " + (datos.empresa || "-"),
+    "RUT:        " + (datos.rut || "-"),
+    "",
+    "La reserva está PENDIENTE DE CONFIRMACIÓN. Te contactaremos para confirmarla.",
+    "",
+    "Ante cualquier duda, responde este correo o escríbenos por WhatsApp al +56 9 4818 4418.",
+    "",
+    "Sur Consultores",
+    "surconsultores.org",
+  ].join("\n");
+
+  MailApp.sendEmail(correo, "Recibimos tu reserva — " + cuposTexto + " el " + diaCorto, cuerpo, {
+    name: "Sur Consultores",
+    replyTo: CORREO_AVISO,
+  });
 }
 
 /* ---------- Solicitudes de reunión ---------- */
