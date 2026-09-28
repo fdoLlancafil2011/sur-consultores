@@ -583,6 +583,25 @@ fieldset.field legend { margin-bottom: 8px; }
 .main-nav a[aria-current="page"] { color: var(--ink); font-weight: 500; }
 .mobile-nav a[aria-current="page"] { color: var(--accent); font-weight: 500; }
 
+/* Botón destacado de la Agenda Petrinovic en el menú */
+.main-nav a.nav-petrinovic {
+  margin: -6px 0;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: #FBE4E1;
+  color: #8E2E24;
+  transition: background-color .2s, color .2s;
+}
+.main-nav a.nav-petrinovic:hover { background: #F6D0CB; color: #7A241B; }
+.mobile-nav a.nav-petrinovic {
+  margin-top: 8px;
+  padding: 12px 14px;
+  border-bottom: 0;
+  border-radius: var(--radius-sm);
+  background: #FBE4E1;
+  color: #8E2E24;
+}
+
 .agenda { padding-top: 72px; }
 .agenda .section-head { margin-bottom: 40px; }
 .agenda h1 { font-size: clamp(32px, 4vw, 48px); max-width: 18ch; }
