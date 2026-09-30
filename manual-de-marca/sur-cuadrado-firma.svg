@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Sur Consultores">
+  <title>Sur Consultores — logo cuadrado con el nombre (firma de correo)</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&amp;display=swap");
+    .wm { font-family: "Inter Tight", "Inter", "Segoe UI", Arial, sans-serif; font-size: 12.5px; text-anchor: middle; letter-spacing: -0.015em; }
+  </style>
+  <rect width="100" height="100" fill="#FFFFFF"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 15.9h36" stroke="#BFC7C1" stroke-width="3.5"/>
+    <path d="M32 27 50 45 68 27" stroke="#6F9184" stroke-width="6.9"/>
+  </g>
+  <text class="wm" x="50" y="64.9" font-weight="600" fill="#2A333B">Sur</text>
+  <text class="wm" x="50" y="79.9" font-weight="400" fill="#858E99">Consultores</text>
+</svg>
