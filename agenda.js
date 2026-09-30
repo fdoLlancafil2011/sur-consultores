@@ -48,7 +48,7 @@ do primerDia.setDate(primerDia.getDate() + 1); while (esFinDeSemana(primerDia));
 const ultimoDia = new Date(hoy.getFullYear(), hoy.getMonth() + MESES_VISIBLES, 0, 12);
 
 /* ---------- Disponibilidad ---------- */
-let capacidad = 50;
+let capacidad = 300;
 let reservados = {};
 let agendaActiva = false;
 

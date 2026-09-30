@@ -33,7 +33,7 @@ const COLUMNAS = [
 ];
 
 // Agenda Petrinovic: cupos por día, sumando ambos servicios.
-const CUPOS_POR_DIA = 50;
+const CUPOS_POR_DIA = 300;
 const HOJA_RESERVAS = "Reservas Petrinovic";
 
 // Una reserva con este estado deja de ocupar cupos.
