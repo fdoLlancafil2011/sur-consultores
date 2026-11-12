@@ -61,6 +61,8 @@ h1,h2,h3{font-family:var(--f-titulo);color:var(--tinta);text-wrap:balance}
 .barra{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--blanco);box-shadow:0 1px 0 var(--linea)}
 .barra .in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
 .barra img{height:32px;width:auto}
+.marca{display:flex;border-radius:4px}
+.marca:focus-visible{outline:3px solid var(--navy);outline-offset:4px}
 .nav{display:flex;align-items:center;gap:26px;font-size:16px;font-weight:700}
 .nav a{text-decoration:none;color:var(--navy)}
 .nav a:hover{color:var(--rojo)}
@@ -296,7 +298,7 @@ h1,h2,h3{font-family:var(--f-titulo);color:var(--tinta);text-wrap:balance}
 <body>
 <header class="barra">
   <div class="in">
-    <img src="img/logo-color.png" alt="Grupo Petrinovic">
+    <a class="marca" href="https://petrinovic.com/" aria-label="Ir al sitio de Grupo Petrinovic"><img src="img/logo-color.png" alt="Grupo Petrinovic"></a>
     <nav class="nav"><a href="#servicios">Servicios</a><a href="#industrias">Industrias</a><a href="#proceso">Cómo trabajamos</a><a class="btn" href="#contacto">Agendar evaluación</a></nav>
   </div>
 </header>
