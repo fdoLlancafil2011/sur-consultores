@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Servicios para empresas | Grupo Petrinovic</title>
+<meta name="description" content="Evaluación psicosensométrica y médica, certificación de competencias, reclutamiento, servicio de acreditación laboral y operativos en terreno. Para una persona o para cuadrillas completas, con resultados en 12 horas.">
+<meta name="theme-color" content="#22305c">
+<link rel="canonical" href="https://surconsultores.org/petrinovic/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Grupo Petrinovic">
+<meta property="og:title" content="Servicios para empresas | Grupo Petrinovic">
+<meta property="og:description" content="Evaluación psicosensométrica y médica, certificación de competencias, reclutamiento, servicio de acreditación laboral y operativos en terreno. Para una persona o para cuadrillas completas, con resultados en 12 horas.">
+<meta property="og:url" content="https://surconsultores.org/petrinovic/">
+<meta property="og:image" content="https://surconsultores.org/petrinovic/img/vista-previa.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..800&family=Lato:wght@400;700&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%;height:auto}[hidden]{display:none!important}
+
+/* Concepto: portal de servicios claro, en la línea de los portales de seguridad laboral chilenos:
+   fondo gris claro y lavanda, tarjetas blancas redondeadas, bloques azul marino y el rojo Petrinovic
+   como acento. Imagen y texto siempre separados. Un solo look claro, a propósito. */
+:root{
+  color-scheme:light;
+  --fondo:#f3f4f7; --suave:#e8ecf6; --blanco:#ffffff; --linea:#d9deea;
+  --navy:#22305c; --tinta:#141b33; --texto:#3d4660; --rojo:#c8202b; --rojo-osc:#a81a24; --rosa:#fde8e9;
+  --f-titulo:"Montserrat",Helvetica,Arial,sans-serif; --f-texto:"Lato",Helvetica,Arial,sans-serif;
+  --r:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--texto);font-family:var(--f-texto);font-size:18px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--blanco)}
+img{display:block}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,figure{margin:0;padding:0}
+ul,ol{list-style:none}
+h1,h2,h3{font-family:var(--f-titulo);color:var(--tinta);text-wrap:balance}
+.in{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--f-titulo);font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rojo)}
+.eyebrow::before{content:"";width:26px;height:14px;flex:none;background:var(--rojo);clip-path:polygon(0 0,22% 0,50% 50%,22% 100%,0 100%,28% 50%,50% 0,72% 0,100% 50%,72% 100%,50% 100%,78% 50%)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-titulo);font-weight:700;font-size:16px;text-decoration:none;padding:14px 24px;border-radius:8px;border:2px solid var(--rojo);background:var(--rojo);color:#fff;cursor:pointer;transition:background .15s ease,transform .15s ease}
+.btn:hover{background:var(--rojo-osc);border-color:var(--rojo-osc);transform:translateY(-1px)}
+.btn.linea{background:transparent;border-color:var(--navy);color:var(--navy)}
+.btn.linea:hover{background:var(--navy);color:#fff}
+.mas{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--navy);text-decoration:underline;text-underline-offset:4px}
+.mas:hover{color:var(--rojo)}
+.flecha{display:inline-block;transition:transform .15s ease}
+.btn:hover .flecha,.mas:hover .flecha{transform:translateX(4px)}
+.btn:focus-visible,.mas:focus-visible,.nav a:focus-visible,.copiar:focus-visible,.card-srv:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.flecha{transition:none}.btn:hover{transform:none}}
+
+/* encabezado */
+.barra{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--blanco);box-shadow:0 1px 0 var(--linea)}
+.barra .in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
+.barra img{height:32px;width:auto}
+.nav{display:flex;align-items:center;gap:26px;font-size:16px;font-weight:700}
+.nav a{text-decoration:none;color:var(--navy)}
+.nav a:hover{color:var(--rojo)}
+.nav .btn{padding:10px 18px;font-size:14px;color:#fff}
+@media (max-width:820px){.nav a:not(.btn){display:none}.barra img{height:26px}}
+
+/* portada */
+.hero{padding-block:28px 0}
+.hero-card{background:var(--blanco);border-radius:var(--r);border-bottom:8px solid var(--rojo);display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden;box-shadow:0 10px 30px rgba(34,48,92,.08)}
+.hero-t{padding:56px 52px;display:flex;flex-direction:column;gap:24px;justify-content:center;min-width:0}
+.hero h1{font-size:clamp(32px,3.8vw,50px);font-weight:500;line-height:1.15}
+.hero h1 b{font-weight:800;display:block}
+.hero h1 b span{color:var(--rojo)}
+.hero .lead{font-size:clamp(17px,1.5vw,20px);max-width:52ch}
+.acciones{display:flex;flex-wrap:wrap;gap:14px}
+.hero-f{min-height:520px;position:relative}
+.hero-f img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (max-width:900px){.hero-card{grid-template-columns:1fr}.hero-t{padding:34px 24px}.hero-f{min-height:0;aspect-ratio:16/10;order:-1}}
+
+/* respaldo */
+.respaldo{padding-block:22px 0}
+.respaldo ul{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.respaldo li{background:var(--blanco);border-radius:var(--r);padding:22px 24px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.respaldo b{font-family:var(--f-titulo);font-size:clamp(22px,2.3vw,30px);font-weight:800;color:var(--navy);line-height:1.15}
+.respaldo span{font-size:15px;line-height:1.35}
+@media (max-width:820px){.respaldo ul{grid-template-columns:1fr 1fr;gap:12px}.respaldo li{padding:16px 18px}}
+
+/* galería de rubros */
+.galeria{padding-block:56px 0}
+.galeria .in{display:flex;flex-direction:column;gap:24px}
+.gal-g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gal-g figure{display:flex;flex-direction:column;gap:10px;min-width:0}
+.gal-g img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);border-bottom:6px solid var(--rojo)}
+.gal-g figcaption{font-family:var(--f-titulo);font-size:16px;font-weight:700;color:var(--tinta);line-height:1.3}
+.gal-g figcaption span{display:block;font-family:var(--f-texto);font-weight:400;font-size:15px;color:var(--texto)}
+@media (max-width:900px){.gal-g{grid-template-columns:1fr 1fr}.gal-g img{aspect-ratio:1/1}}
+
+/* logo del centro de salud, junto a la foto médica */
+.logo-cs{margin-top:16px;background:var(--blanco);border:2px solid #1b4477;border-radius:var(--r);padding:22px 28px;display:grid;place-items:center}
+.srv-img img.med{aspect-ratio:4/4.3}
+@media (max-width:900px){.srv-img img.med{aspect-ratio:16/11}}
+.srv-img .logo-cs img{width:min(100%,340px);aspect-ratio:auto;border:0;border-radius:0}
+
+/* centro médico */
+.centro{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.centro li{background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.centro b{font-family:var(--f-titulo);font-size:24px;font-weight:800;line-height:1.1}
+.centro span{font-size:14px;color:#dde3f3;line-height:1.35}
+@media (max-width:560px){.centro{grid-template-columns:1fr}}
+
+/* por qué importa */
+.porque{padding-block:56px 0}
+.porque-card{background:var(--navy);color:#fff;border-radius:var(--r);padding:52px;display:flex;flex-direction:column;gap:34px}
+.porque .eyebrow{color:#ffb3b8}
+.porque .eyebrow::before{background:#ffb3b8}
+.porque h2{color:#fff;font-size:clamp(26px,3.2vw,40px);font-weight:700;max-width:24ch;line-height:1.15}
+.cifras{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cifras li{background:rgba(255,255,255,.07);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.cifras b{font-family:var(--f-titulo);font-weight:800;font-size:clamp(36px,4.2vw,54px);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.cifras p{font-size:17px;color:#dde3f3}
+.cifras small{font-size:13px;color:#b9c3e0}
+.porque .cierre{font-size:clamp(18px,1.7vw,22px);max-width:60ch;color:#fff}
+@media (max-width:820px){.porque-card{padding:32px 22px}.cifras{grid-template-columns:1fr}}
+
+/* servicios: panorama */
+.panorama{padding-block:72px 40px}
+.panorama .in{display:flex;flex-direction:column;gap:30px}
+.cab{display:flex;flex-direction:column;gap:14px;max-width:760px}
+.cab h2{font-size:clamp(28px,3.4vw,44px);font-weight:500;line-height:1.15}
+.cab h2 b{font-weight:800}
+.cab p{font-size:19px}
+.grid-srv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card-srv{background:var(--blanco);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:12px;text-decoration:none;border:1px solid transparent;transition:border-color .15s ease,box-shadow .15s ease}
+.card-srv:hover{border-color:var(--linea);box-shadow:0 10px 26px rgba(34,48,92,.10)}
+.card-srv .top{display:flex;align-items:center;gap:14px}
+.ico{width:46px;height:46px;flex:none;border-radius:50%;background:var(--rojo);display:grid;place-items:center}
+.ico svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card-srv h3{font-size:19px;font-weight:700;line-height:1.25}
+.card-srv p{font-size:16px;line-height:1.5}
+.card-srv .mas{margin-top:auto;font-size:16px}
+@media (max-width:900px){.grid-srv{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.grid-srv{grid-template-columns:1fr}.panorama{padding-block:48px 24px}}
+
+/* servicios: detalle */
+.srv{padding-block:64px;scroll-margin-top:70px}
+.srv.alt{background:var(--suave)}
+.srv-g{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.srv-img{min-width:0}
+.srv-img img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);border-bottom:8px solid var(--rojo)}
+.srv.rev .srv-img{order:2}
+.srv-txt{display:flex;flex-direction:column;gap:18px;min-width:0}
+.srv-txt h2{font-size:clamp(26px,3vw,40px);font-weight:800;line-height:1.15}
+.srv-txt .lead{font-size:19px}
+.mini{font-family:var(--f-titulo);font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin-top:4px}
+.cambios{display:flex;flex-direction:column;gap:12px}
+.cambios li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;font-size:17px}
+.cambios li::before{content:"";width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--rosa) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c8202b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat}
+.cambios b{color:var(--tinta)}
+.caso{background:var(--blanco);border-radius:var(--r);overflow:hidden;box-shadow:0 6px 20px rgba(34,48,92,.07)}
+.caso span{display:block;background:var(--navy);color:#fff;font-family:var(--f-titulo);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 22px}
+.caso p{font-size:16px;line-height:1.55;padding:16px 22px 20px;color:var(--texto)}
+.srv-txt .btn{align-self:flex-start}
+@media (max-width:900px){.srv{padding-block:44px}.srv-g{grid-template-columns:1fr;gap:26px}.srv.rev .srv-img{order:0}.srv-img img{aspect-ratio:16/11}}
+
+/* dos fotos con corte diagonal */
+.duo{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:var(--r);overflow:hidden;border-bottom:8px solid var(--rojo);background:var(--rojo)}
+.srv-img .duo img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;border:0;border-radius:0}
+.duo .a{clip-path:polygon(0 0,62% 0,36% 100%,0 100%)}
+.duo .b{clip-path:polygon(62.625% 0,100% 0,100% 100%,36.625% 100%)}
+@media (max-width:900px){.duo{aspect-ratio:16/11}}
+
+/* formatos por servicio */
+.formatos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.formato{background:var(--blanco);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:4px;border-top:4px solid var(--rojo);min-width:0}
+.formato.uno{border-top-color:var(--navy)}
+.formato small{font-family:var(--f-titulo);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rojo)}
+.formato.uno small{color:var(--navy)}
+.formato p{font-size:15px;line-height:1.45}
+@media (max-width:560px){.formatos{grid-template-columns:1fr}}
+
+/* masivo o individual */
+.modos{padding-block:0 64px}
+.modos .in{display:flex;flex-direction:column;gap:26px}
+.modos-g{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.modo{background:var(--blanco);border-radius:var(--r);padding:30px;display:flex;flex-direction:column;gap:14px;border-top:6px solid var(--rojo);min-width:0}
+.modo.uno{border-top-color:var(--navy)}
+.modo .top{display:flex;align-items:center;gap:14px}
+.modo.uno .ico{background:var(--navy)}
+.modo h3{font-size:24px;font-weight:800}
+.modo>p{font-size:17px}
+@media (max-width:820px){.modos-g{grid-template-columns:1fr}.modo{padding:24px 20px}.modos{padding-block:0 44px}}
+
+/* proceso de reclutamiento */
+.proc-r{margin-top:48px;display:flex;flex-direction:column;gap:22px}
+.proc-r h3{font-size:clamp(22px,2.6vw,32px);font-weight:500;line-height:1.2}
+.proc-r h3 b{font-weight:800}
+.pasos-r{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pasos-r li{background:var(--blanco);border-radius:var(--r);padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px;border-top:5px solid var(--rojo);min-width:0}
+.pasos-r .n{width:40px;height:40px;border-radius:50%;background:var(--rojo);color:#fff;display:grid;place-items:center;font-family:var(--f-titulo);font-weight:800;font-size:18px}
+.pasos-r b{font-family:var(--f-titulo);font-size:18px;color:var(--tinta);line-height:1.25}
+.pasos-r li>span:last-child{font-size:15px;line-height:1.5}
+.pasos-r em{display:block;margin-top:6px;font-style:normal;font-weight:700;color:var(--navy)}
+.pasos-r .cliente{border-top-color:var(--navy);background:var(--suave)}
+.pasos-r .cliente .n{background:var(--navy)}
+.pasos-r .garantia{background:var(--navy);border-top-color:var(--rojo)}
+.pasos-r .garantia b{color:#fff}
+.pasos-r .garantia li>span:last-child,.pasos-r .garantia>span:last-child{color:#dde3f3}
+.pasos-r .garantia .n svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:900px){.pasos-r{grid-template-columns:1fr 1fr}.proc-r{margin-top:36px}}
+@media (max-width:520px){.pasos-r{grid-template-columns:1fr}}
+
+/* gestores de control (acreditaciones) */
+.gestores{background:var(--navy);border-radius:var(--r);padding:22px 28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+.gestores>span{font-family:var(--f-titulo);font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ffb3b8}
+.gestores ul{display:flex;flex-wrap:wrap;gap:10px}
+.gestores li{background:var(--blanco);color:var(--tinta);font-family:var(--f-titulo);font-weight:700;font-size:17px;border-radius:999px;padding:8px 20px}
+.srv.alt .pasos-r li{background:var(--blanco)}
+
+/* lo que cuesta contratar mal */
+.costos{margin-top:48px;background:var(--navy);color:#fff;border-radius:var(--r);padding:44px;display:flex;flex-direction:column;gap:26px}
+.costos .eyebrow{color:#ffb3b8}
+.costos .eyebrow::before{background:#ffb3b8}
+.costos h3{color:#fff;font-size:clamp(22px,2.6vw,34px);font-weight:700;line-height:1.2;max-width:30ch}
+.costos-g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.costos-g li{background:rgba(255,255,255,.07);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.costos-g b{font-family:var(--f-titulo);font-weight:800;font-size:clamp(28px,3vw,40px);line-height:1.05;color:#fff}
+.costos-g p{font-size:15px;color:#dde3f3;line-height:1.45}
+.costos-g small{font-size:12px;color:#b9c3e0}
+.ejemplo{background:var(--blanco);color:var(--texto);border-radius:12px;padding:20px 24px;font-size:17px;line-height:1.6}
+.ejemplo strong{display:block;font-family:var(--f-titulo);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+.ejemplo b{color:var(--rojo)}
+@media (max-width:900px){.costos-g{grid-template-columns:1fr 1fr}.costos{padding:28px 20px;margin-top:36px}}
+@media (max-width:520px){.costos-g{grid-template-columns:1fr}}
+
+/* cumplimiento (certificación) */
+.cumple{margin-top:48px;display:flex;flex-direction:column;gap:22px}
+.cumple h3{font-size:clamp(22px,2.6vw,32px);font-weight:500;line-height:1.2}
+.cumple h3 b{font-weight:800}
+.cumple-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cumple-g>li{background:var(--blanco);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.cumple-g .top{display:flex;align-items:center;gap:14px}
+.cumple-g h4{margin:0;font-family:var(--f-titulo);font-size:18px;font-weight:700;color:var(--tinta);line-height:1.25}
+.cumple-g p{font-size:16px;line-height:1.5}
+.cumple-g .cambios li{background:none;padding:0;font-size:15px}
+@media (max-width:900px){.cumple-g{grid-template-columns:1fr}.cumple{margin-top:36px}}
+
+/* industrias */
+.ind{padding-block:72px}
+.ind .in{display:flex;flex-direction:column;gap:30px}
+.ind-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ind-g li{background:var(--blanco);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.ind-g img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.ind-g div{padding:18px 22px 22px;display:flex;flex-direction:column;gap:6px}
+.ind-g b{font-family:var(--f-titulo);font-size:19px;font-weight:700;color:var(--tinta)}
+.ind-g span{font-size:16px;line-height:1.45}
+@media (max-width:900px){.ind-g{grid-template-columns:1fr 1fr}.ind{padding-block:48px}}
+@media (max-width:560px){.ind-g{grid-template-columns:1fr}}
+
+/* proceso */
+.proc{padding-block:72px;background:var(--suave)}
+.proc .in{display:flex;flex-direction:column;gap:30px}
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:paso}
+.pasos li{counter-increment:paso;background:var(--blanco);border-radius:var(--r);padding:26px 24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.pasos li::before{content:counter(paso);width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:var(--f-titulo);font-weight:800;font-size:20px}
+.pasos b{font-family:var(--f-titulo);font-size:20px;font-weight:700;color:var(--tinta)}
+.pasos span{font-size:16px;line-height:1.5}
+@media (max-width:900px){.pasos{grid-template-columns:1fr 1fr}.proc{padding-block:48px}}
+@media (max-width:560px){.pasos{grid-template-columns:1fr}}
+
+/* contacto */
+.cta{padding-block:72px}
+.cta-card{background:var(--rojo);border-radius:var(--r);padding:52px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;color:#fff}
+.cta .eyebrow{color:#ffd9dc}
+.cta .eyebrow::before{background:#ffd9dc}
+.cta h2{color:#fff;font-size:clamp(28px,3.6vw,46px);font-weight:800;line-height:1.12;margin-top:14px}
+.cta .lead{font-size:20px;color:#ffe9ea;max-width:44ch;margin-top:16px}
+.datos{background:var(--blanco);color:var(--tinta);border-radius:12px;padding:6px 24px}
+.datos li{display:flex;flex-direction:column;gap:2px;padding:16px 0;border-top:1px solid var(--linea)}
+.datos li:first-child{border-top:0}
+.datos small{font-family:var(--f-titulo);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--texto)}
+.datos .v{display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:19px;font-weight:700;overflow-wrap:anywhere}
+.datos .v a{color:inherit;text-decoration:none}.datos .v a:hover{color:var(--rojo);text-decoration:underline}
+.copiar{flex:none;font:700 13px var(--f-texto);color:var(--navy);background:var(--suave);border:0;border-radius:6px;padding:8px 12px;cursor:pointer}
+.copiar:hover{background:var(--linea)}
+@media (max-width:900px){.cta-card{grid-template-columns:1fr;padding:32px 22px;gap:26px}.cta{padding-block:48px}}
+
+.pie{background:var(--blanco);padding-block:30px 40px;border-top:1px solid var(--linea)}
+.pie .in{display:flex;flex-direction:column;gap:12px}
+.pie img{height:28px;width:auto;align-self:flex-start}
+.pie p{font-size:14px;max-width:92ch}
+</style>
+</head>
+<body>
+<header class="barra">
+  <div class="in">
+    <img src="img/logo-color.png" alt="Grupo Petrinovic">
+    <nav class="nav"><a href="#servicios">Servicios</a><a href="#industrias">Industrias</a><a href="#proceso">Cómo trabajamos</a><a class="btn" href="#contacto">Agendar evaluación</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="in">
+    <div class="hero-card">
+      <div class="hero-t">
+        <p class="eyebrow">Servicios para empresas</p>
+        <h1>El accidente que no ocurre <b><span>se decide antes</span> de entrar a la faena</b></h1>
+        <p class="lead">Evaluamos, certificamos y seleccionamos a las personas que conducen, operan y trabajan en altura. En nuestro centro o en su faena, para una persona o para cuadrillas completas, con resultados en 12 horas.</p>
+        <div class="acciones"><a class="btn" href="#contacto">Solicitar una evaluación <span class="flecha">→</span></a><a class="btn linea" href="#servicios">Ver los servicios</a></div>
+      </div>
+      <div class="hero-f"><img src="img/edificio.jpg" alt="Edificio corporativo de Grupo Petrinovic en Providencia"></div>
+    </div>
+  </div>
+</section>
+
+<section class="respaldo">
+  <div class="in"><ul>
+    <li><b>50 años</b><span>de experiencia en psicosensometría</span></li>
+    <li><b>12 horas</b><span>para entregar resultados en línea</span></li>
+    <li><b>300 diarias</b><span>atenciones de capacidad en nuestro centro</span></li>
+    <li><b>Todo Chile</b><span>con operativos en terreno</span></li>
+  </ul></div>
+</section>
+
+<section class="galeria">
+  <div class="in">
+    <div class="cab">
+      <p class="eyebrow">Donde trabaja su gente</p>
+      <h2>Del huerto a la ruta, <b>del bosque a la bodega</b></h2>
+    </div>
+    <div class="gal-g">
+      <figure><img src="img/gal-cosecha.jpg" alt="Trabajadores de temporada cosechando en un campo"><figcaption>Agrícola<span>Temporeros evaluados antes de la cosecha.</span></figcaption></figure>
+      <figure><img src="img/gal-manzanas.jpg" alt="Bins de manzanas recién cosechadas tirados por un tractor en un huerto"><figcaption>Fruticultura<span>Tractoristas y operadores aptos para la temporada.</span></figcaption></figure>
+      <figure><img src="img/gal-forestal.jpg" alt="Máquina forestal transportando troncos por un camino de bosque"><figcaption>Forestal<span>Operadores de maquinaria certificados.</span></figcaption></figure>
+      <figure><img src="img/gal-chofer.jpg" alt="Conductor sonriente al volante de un vehículo de reparto"><figcaption>Logística y transporte<span>Conductores evaluados para cada ruta.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="porque">
+  <div class="in">
+    <div class="porque-card">
+      <p class="eyebrow">Por qué importa</p>
+      <h2>El riesgo está en las personas que nadie evaluó a tiempo</h2>
+      <ul class="cifras">
+        <li><b>215.144</b><p>accidentes laborales se registraron en Chile durante 2025. Siete de cada diez ocurrieron en el trabajo.</p><small>SUSESO, balance 2025</small></li>
+        <li><b>225</b><p>personas murieron en accidentes del trabajo en Chile durante 2025.</p><small>SUSESO, balance 2025</small></li>
+        <li><b>28%</b><p>de los accidentes graves de 2025 fueron caídas desde más de 1,8 metros.</p><small>SUSESO, informe anual de seguridad y salud en el trabajo 2025</small></li>
+      </ul>
+      <p class="cierre">Saber quién está en condiciones de subir, conducir u operar es la primera barrera de control. Y es la única que actúa antes de que la persona entre a la faena.</p>
+    </div>
+  </div>
+</section>
+
+<section class="panorama" id="servicios">
+  <div class="in">
+    <div class="cab">
+      <p class="eyebrow">Nuestros servicios</p>
+      <h2>Seis formas de llegar a la faena <b>con la gente correcta</b></h2>
+      <p>Cada servicio resuelve un problema concreto de su operación. Puede contratar uno o coordinarlos todos con un mismo equipo.</p>
+    </div>
+    <div class="grid-srv">
+      <a class="card-srv" href="#s-psico"><div class="top"><span class="ico"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Evaluación psicosensométrica y psicolaboral</h3></div><p>Visión, reflejos, atención y fatiga de quienes conducen u operan.</p><span class="mas">Conoce más <span class="flecha">→</span></span></a>
+      <a class="card-srv" href="#s-medica"><div class="top"><span class="ico"><svg viewBox="0 0 24 24"><path d="M20.8 8.6a5 5 0 0 0-8.8-3.2 5 5 0 0 0-8.8 3.2c0 5.4 8.8 10.4 8.8 10.4s8.8-5 8.8-10.4z"/><path d="M5 12h4l2-3 2 5 2-2h4"/></svg></span><h3>Evaluación médica pre ocupacional</h3></div><p>En nuestro centro médico de Santiago, con resultados en línea en 12 horas.</p><span class="mas">Conoce más <span class="flecha">→</span></span></a>
+      <a class="card-srv" href="#s-cert"><div class="top"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></span><h3>Certificación de competencias</h3></div><p>Privada o ChileValora, más auditorías laborales, gestión documental y carpetas de arranque.</p><span class="mas">Conoce más <span class="flecha">→</span></span></a>
+      <a class="card-srv" href="#s-reclu"><div class="top"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M16 4a4 4 0 0 1 0 8"/><path d="M22 21c0-3-1.8-5.6-4.5-6.6"/></svg></span><h3>Reclutamiento y selección</h3></div><p>Candidatos para cargos operativos, evaluados antes de contratar.</p><span class="mas">Conoce más <span class="flecha">→</span></span></a>
+      <a class="card-srv" href="#s-acred"><div class="top"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><h3>Servicio Acreditación Laboral</h3></div><p>Operadores y conductores habilitados según el estándar del mandante.</p><span class="mas">Conoce más <span class="flecha">→</span></span></a>
+      <a class="card-srv" href="#s-terreno"><div class="top"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h3>Operativos en terreno</h3></div><p>Evaluamos en su empresa o en su faena, en todo el país.</p><span class="mas">Conoce más <span class="flecha">→</span></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="modos">
+  <div class="in">
+    <div class="cab">
+      <p class="eyebrow">Masivo o individual</p>
+      <h2>Para una persona <b>o para toda la dotación</b></h2>
+      <p>Todos nuestros servicios funcionan en los dos formatos, con el mismo rigor de evaluación.</p>
+    </div>
+    <div class="modos-g">
+      <div class="modo">
+        <div class="top"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M16 4a4 4 0 0 1 0 8"/><path d="M22 21c0-3-1.8-5.6-4.5-6.6"/></svg></span><h3>Formato masivo</h3></div>
+        <p>Para aperturas de obra, temporadas agrícolas, nuevos contratos y paradas de planta.</p>
+        <ul class="cambios">
+          <li><span><b>Cuadrillas completas</b> evaluadas con un mismo estándar, comparables entre sí.</span></li>
+          <li><span><b>Capacidad para 300 atenciones diarias</b> en nuestro centro, u operativos en su faena.</span></li>
+          <li><span><b>Un solo punto de contacto</b> para agendar, evaluar y entregar resultados.</span></li>
+          <li><span><b>Ranking de la dotación</b> con fortalezas y brechas de cada persona, cuando el servicio lo considera.</span></li>
+        </ul>
+      </div>
+      <div class="modo uno">
+        <div class="top"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></span><h3>Formato individual</h3></div>
+        <p>Para un ingreso puntual, un reemplazo urgente o un cargo crítico.</p>
+        <ul class="cambios">
+          <li><span><b>Agenda ágil</b> en nuestro centro de Providencia.</span></li>
+          <li><span><b>Resultados en línea en 12 horas</b> para no detener la contratación.</span></li>
+          <li><span><b>Todas las evaluaciones en una sola visita:</b> médica, psicológica y psicosensométrica.</span></li>
+          <li><span><b>El mismo rigor</b> que en un proceso masivo, aplicado a una sola persona.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="srv alt" id="s-psico">
+  <div class="in srv-g">
+    <figure class="srv-img"><img src="img/psico.jpg" alt="Trabajador rindiendo una evaluación psicosensométrica en un gabinete Petrinovic" class="med"><div class="logo-cs"><img src="img/logo-centro-salud.png" alt="Petrinovic Centro de Salud"></div></figure>
+    <div class="srv-txt">
+      <p class="eyebrow">Salud laboral</p>
+      <h2>Un reflejo lento no avisa. Una evaluación, sí.</h2>
+      <p class="lead">La evaluación psicosensométrica y psicolaboral mide visión, audición, reflejos, coordinación y atención de quienes conducen u operan equipos. También detecta fatiga, somnolencia y aversión al riesgo.</p>
+      <p class="mini">El cambio que genera</p>
+      <ul class="cambios">
+        <li><span><b>Conductores y operadores aptos</b> antes de tomar el volante o los mandos.</span></li>
+        <li><span><b>Menos incidentes con vehículos y maquinaria:</b> detecta a tiempo la fatiga, la somnolencia y la atención disminuida.</span></li>
+        <li><span><b>Cargos bien asignados:</b> sabe quién rinde mejor en conducción, maquinaria pesada o tareas de alta criticidad.</span></li>
+        <li><span><b>Ingreso a faena sin rechazos:</b> cumple la normativa y lo que exige el mandante.</span></li>
+        <li><span><b>Decisiones sin esperar:</b> informes en línea en 12 horas.</span></li>
+      </ul>
+      <div class="formatos">
+        <div class="formato"><small>Masivo</small><p>Dotaciones completas antes de una temporada o un contrato nuevo, en el centro o en su faena.</p></div>
+        <div class="formato uno"><small>Individual</small><p>Un conductor u operador que ingresa o renueva, con resultado en 12 horas.</p></div>
+      </div>
+      <div class="caso"><span>Caso tipo</span><p>Una empresa de transporte evalúa a toda su dotación antes de la temporada alta. Detecta a los conductores con visión nocturna disminuida, los deriva a tratamiento y reordena los turnos. La flota sigue operando y el riesgo baja antes del primer viaje.</p></div>
+      <a class="btn linea" href="#contacto">Solicitar este servicio <span class="flecha">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="srv rev" id="s-medica">
+  <div class="in srv-g">
+    <figure class="srv-img"><img src="img/medica.jpg" alt="Profesional de salud tomando la presión a un trabajador" class="med"><div class="logo-cs"><img src="img/logo-centro-salud.png" alt="Petrinovic Centro de Salud"></div></figure>
+    <div class="srv-txt">
+      <p class="eyebrow">Centro médico en Santiago</p>
+      <h2>Exámenes pre ocupacionales hoy, resultados en línea mañana</h2>
+      <p class="lead">En nuestro Centro de Salud Laboral de Av. Los Leones 1707, Providencia, determinamos si la persona es apta para el cargo: altura física, espacios confinados, altitud geográfica, alcohol y drogas, entre otras baterías. Una capacidad de respuesta probada con empresas mandantes como Codelco y Anglo American.</p>
+      <ul class="centro">
+        <li><b>300</b><span>atenciones diarias de capacidad</span></li>
+        <li><b>12 horas</b><span>para tener los resultados en línea</span></li>
+        <li><b>1 visita</b><span>para todos los exámenes del cargo</span></li>
+      </ul>
+      <p class="mini">El cambio que genera</p>
+      <ul class="cambios">
+        <li><span><b>Personas aptas</b> para la altura, el encierro y la altitud, comprobado en el centro y no en la obra.</span></li>
+        <li><span><b>Detección temprana</b> de patologías que el trabajo puede agravar.</span></li>
+        <li><span><b>Menos sorpresas después del ingreso:</b> las condiciones de salud se conocen antes de asignar el cargo.</span></li>
+        <li><span><b>Respaldo documentado</b> ante mandantes y fiscalizaciones.</span></li>
+        <li><span><b>Todo en una visita:</b> exámenes médicos, psicológicos y psicosensométricos en un mismo centro.</span></li>
+      </ul>
+      <div class="formatos">
+        <div class="formato"><small>Masivo</small><p>Baterías completas para aperturas de obra o contratos nuevos, con capacidad para 300 atenciones diarias.</p></div>
+        <div class="formato uno"><small>Individual</small><p>El examen de quien ingresa o cambia de cargo, con hora en nuestro centro.</p></div>
+      </div>
+      <div class="caso"><span>Caso tipo</span><p>Una constructora exige la batería de altura física a todo ingreso de obra. Quien no está en condiciones de trabajar sobre 1,8 metros se detecta en la consulta y se reubica en otra función. Nadie lo descubre arriba del andamio.</p></div>
+      <a class="btn linea" href="#contacto">Solicitar este servicio <span class="flecha">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="srv alt" id="s-cert">
+  <div class="in srv-g">
+    <figure class="srv-img"><div class="duo"><img class="a" src="img/cert-forestal.jpg" alt="Cosechadora forestal operando en un bosque" style="object-position:72% 50%"><img class="b" src="img/camion.jpg" alt="Camión minero cargado por una pala en faena" style="object-position:30% 50%"></div></figure>
+    <div class="srv-txt">
+      <p class="eyebrow">Certificación de competencias</p>
+      <h2>Lo que su gente sabe hacer, demostrado en terreno</h2>
+      <p class="lead">Evaluamos de forma teórica y práctica a cada trabajador según su perfil ocupacional. Certificación privada, a la medida de su faena, o ChileValora, con reconocimiento oficial. Al terminar recibe un ranking con las fortalezas y brechas de cada persona.</p>
+      <p class="mini">El cambio que genera</p>
+      <ul class="cambios">
+        <li><span><b>Capacitación dirigida:</b> invierte solo en las brechas reales de cada trabajador.</span></li>
+        <li><span><b>Mejor asignación:</b> los equipos críticos quedan en manos de quienes demostraron dominarlos.</span></li>
+        <li><span><b>Equipos más motivados:</b> lo afirma el 85% de los empleadores chilenos que certificaron a su gente.</span></li>
+        <li><span><b>Ventaja al competir por contratos:</b> el 84% de esos empleadores dice que certificar les da una ventaja en el mercado.</span></li>
+        <li><span><b>Certificado privado en 24 horas</b> desde el cierre de la evaluación.</span></li>
+        <li><span><b>Exigencias del mandante cubiertas:</b> para el 90% de ellos, certificar responde a un requisito legal o contractual.</span></li>
+      </ul>
+      <div class="formatos">
+        <div class="formato"><small>Masivo</small><p>Levantamiento de competencias de toda una dotación, con ranking de brechas por persona.</p></div>
+        <div class="formato uno"><small>Individual</small><p>Certificación de un operador nuevo, una promoción o un perfil puntual.</p></div>
+      </div>
+      <div class="caso"><span>Caso tipo</span><p>Una empresa de transporte de carga levanta las competencias de sus conductores durante dos meses. Un evaluador los acompaña en ruta, registra evidencias y entrega un ranking con las brechas de cada uno. La empresa reasigna recursos y mejora su continuidad operativa frente a los clientes.</p></div>
+      <a class="btn linea" href="#contacto">Solicitar este servicio <span class="flecha">→</span></a>
+    </div>
+  </div>
+  <div class="in">
+    <div class="costos">
+      <p class="eyebrow">Certificar, en números</p>
+      <h3>Un trabajador certificado gana más, trabaja más meses al año y rinde mejor en su equipo</h3>
+      <ul class="costos-g">
+        <li><b>+13%</b><p>de aumento salarial para quienes solo se certificaron. Llega a +25% al sumar capacitación.</p><small>Evaluación de impacto ChileValora, 2026</small></li>
+        <li><b>+8%</b><p>más empleo formal al año: casi un mes adicional de cotizaciones tras certificarse.</p><small>Evaluación de impacto ChileValora, 2026</small></li>
+        <li><b>85%</b><p>de los empleadores dice que certificar mejora la motivación de sus trabajadores.</p><small>Ipsos para ChileValora, 2024</small></li>
+        <li><b>84%</b><p>de los empleadores dice que le da una ventaja competitiva en el mercado.</p><small>Ipsos para ChileValora, 2024</small></li>
+        <li><b>72%</b><p>de los empleadores cree que ayuda a disminuir la rotación laboral.</p><small>Ipsos para ChileValora, 2024</small></li>
+        <li><b>68%</b><p>de los empleadores cree que contribuye a disminuir los accidentes laborales.</p><small>Ipsos para ChileValora, 2024</small></li>
+        <li><b>28 mil</b><p>personas se certificaron con ChileValora en 2025, un alza de 45,7% en los procesos.</p><small>ChileValora, balance 2025</small></li>
+        <li><b>+850</b><p>trabajadores ha certificado Escondida | BHP en ocho años.</p><small>ChileValora, diciembre de 2025</small></li>
+      </ul>
+      <p class="ejemplo"><strong>Financiamiento</strong>Las empresas pueden financiar la certificación ChileValora con la <b>franquicia tributaria SENCE, hasta el 1% de su planilla anual de remuneraciones</b>, directamente o a través de su OTIC. Como centro acreditado, Petrinovic gestiona el proceso completo.</p>
+    </div>
+  </div>
+  <div class="in">
+    <div class="cumple">
+      <p class="eyebrow">Cumplimiento laboral</p>
+      <h3>Además, nos hacemos cargo <b>de que su empresa esté en regla</b></h3>
+      <ul class="cumple-g">
+        <li>
+          <div class="top"><span class="ico"><svg viewBox="0 0 24 24"><path d="M9 3h6l1 2h3v16H5V5h3l1-2z"/><path d="m9 13 2 2 4-4"/></svg></span><h4>Auditorías laborales por la Ley de Subcontratación</h4></div>
+          <p>Revisamos que contratistas y subcontratistas cumplan sus obligaciones laborales y previsionales, como exige la Ley 20.123.</p>
+          <ul class="cambios">
+            <li><span><b>Responsabilidad acotada:</b> con el control al día, la empresa principal ejerce sus derechos de información y retención, y su responsabilidad pasa de solidaria a subsidiaria.</span></li>
+            <li><span><b>Pagos sin sorpresas:</b> detecta a tiempo deudas laborales o previsionales de sus contratistas.</span></li>
+          </ul>
+        </li>
+        <li>
+          <div class="top"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/><path d="M8 14h8M8 17h5"/></svg></span><h4>Mantención documental en portales de acreditación</h4></div>
+          <p>Mantenemos al día la documentación de su empresa y de sus trabajadores en los portales de acreditación de cada mandante.</p>
+          <ul class="cambios">
+            <li><span><b>Sin bloqueos en la garita</b> por un documento vencido o mal cargado.</span></li>
+            <li><span><b>Vigencias bajo control:</b> un equipo dedicado sigue cada vencimiento por usted.</span></li>
+          </ul>
+        </li>
+        <li>
+          <div class="top"><span class="ico"><svg viewBox="0 0 24 24"><path d="M3 7h6l2 2h10v10H3z"/><path d="M12 12v5M9.5 14.5 12 12l2.5 2.5"/></svg></span><h4>Asesoría en carpetas de arranque de proyectos</h4></div>
+          <p>Le ayudamos a reunir y ordenar la carpeta de arranque que exige el mandante antes de iniciar un proyecto.</p>
+          <ul class="cambios">
+            <li><span><b>El proyecto parte en la fecha comprometida,</b> sin observaciones que lo retrasen.</span></li>
+            <li><span><b>Carpeta completa al primer envío:</b> exámenes, certificaciones y documentos del personal en orden.</span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="srv rev" id="s-reclu">
+  <div class="in srv-g">
+    <figure class="srv-img"><img src="img/reclu-bodega.jpg" alt="Trabajadores de un centro de distribución caminando entre estanterías"></figure>
+    <div class="srv-txt">
+      <p class="eyebrow">Reclutamiento y selección</p>
+      <h2>Contratar bien a la primera</h2>
+      <p class="lead">Nos hacemos cargo del proceso completo, desde el levantamiento del perfil hasta el examen preocupacional con la batería que exige el cargo. Su empresa participa en la entrevista técnica y toma la decisión final. Y lo respaldamos con una garantía de reposición sin costo de 45 a 60 días.</p>
+      <p class="mini">El cambio que genera</p>
+      <ul class="cambios">
+        <li><span><b>Menos rotación temprana:</b> se elige por el perfil y las exigencias reales del cargo, no solo por la experiencia declarada.</span></li>
+        <li><span><b>Ingreso a turno sin esperas:</b> los seleccionados llegan con todos sus exámenes aprobados.</span></li>
+        <li><span><b>Menos días con el cargo vacío:</b> reclutamiento, evaluación y exámenes coordinados por un solo proveedor.</span></li>
+        <li><span><b>Un mismo estándar para todos:</b> candidatos comparables entre sí, con datos y no con intuición.</span></li>
+        <li><span><b>Su equipo decide, no filtra:</b> recibe una terna evaluada y se concentra en la entrevista técnica y la decisión final.</span></li>
+        <li><span><b>Garantía de reposición:</b> si la persona no continúa dentro de los primeros 45 a 60 días, presentamos un reemplazo sin costo.</span></li>
+      </ul>
+      <div class="formatos">
+        <div class="formato"><small>Masivo</small><p>Contratación para aperturas de obra, temporadas, nuevos contratos o paradas de planta, con un mismo estándar para decenas de candidatos.</p></div>
+        <div class="formato uno"><small>Individual</small><p>Búsqueda de un cargo crítico o reemplazo urgente, con terna evaluada.</p></div>
+      </div>
+      <div class="caso"><span>Caso tipo</span><p>Una empresa de logística necesita 30 operadores de grúa horquilla para la temporada alta. Entrevista a una terna por cargo y los seleccionados llegan con la evaluación psicológica y el examen preocupacional ya aprobados. Entran a turno sin esperar exámenes.</p></div>
+      <a class="btn linea" href="#contacto">Solicitar este servicio <span class="flecha">→</span></a>
+    </div>
+  </div>
+  <div class="in">
+    <div class="proc-r">
+      <p class="eyebrow">El proceso</p>
+      <h3>Siete etapas, <b>un solo responsable</b></h3>
+      <ol class="pasos-r">
+        <li><span class="n">1</span><b>Levantamiento del perfil</b><span>Definimos con usted las competencias, la experiencia y las condiciones que exige el cargo.</span></li>
+        <li><span class="n">2</span><b>Descripción del cargo</b><span>Funciones, turnos, lugar de trabajo y requisitos de ingreso a faena, por escrito.</span></li>
+        <li><span class="n">3</span><b>Filtro curricular</b><span>Revisamos experiencia, licencias, certificaciones y trayectoria de cada postulante.</span></li>
+        <li><span class="n">4</span><b>Entrevista de filtro</b><span>Verificamos motivación, disponibilidad y ajuste al perfil antes de avanzar.</span></li>
+        <li class="cliente"><span class="n">5</span><b>Entrevista técnica</b><span>La realiza su empresa con la terna que presentamos. <em>A cargo del mandante.</em></span></li>
+        <li><span class="n">6</span><b>Evaluación psicológica</b><span>Evaluación psicolaboral de los finalistas según el perfil del cargo.</span></li>
+        <li><span class="n">7</span><b>Examen preocupacional</b><span>Batería médica afín al cargo, en nuestro centro de Santiago, con resultados en 12 horas.</span></li>
+        <li class="garantia"><span class="n"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></span><b>Garantía de reposición</b><span>Si la persona contratada no continúa dentro de los primeros 45 a 60 días, presentamos un reemplazo sin costo.</span></li>
+      </ol>
+    </div>
+    <div class="costos">
+      <p class="eyebrow">Lo que cuesta contratar mal</p>
+      <h3>Cada salida temprana obliga a reclutar, evaluar y capacitar de nuevo</h3>
+      <ul class="costos-g">
+        <li><b>30,1%</b><p>fue la tasa de rotación laboral del empleo formal en Chile.</p><small>INE, medición de junio de 2025</small></li>
+        <li><b>49,7%</b><p>es la permanencia laboral en construcción, frente a 82,9% en minería.</p><small>INE, junio de 2025</small></li>
+        <li><b>½ a 2</b><p>sueldos anuales cuesta reemplazar a un trabajador.</p><small>Gallup, 2019</small></li>
+        <li><b>3 de 10</b><p>personas dejan un trabajo nuevo en los primeros 90 días.</p><small>Jobvite, 2018</small></li>
+      </ul>
+      <p class="ejemplo"><strong>Ejemplo</strong>Si contrata 20 operadores y 3 de cada 10 se van antes de los 90 días, debe reemplazar a 6. Al costo mínimo que estima Gallup, medio sueldo anual por persona, eso equivale a <b>3 sueldos anuales completos perdidos</b>, sin contar los días con el cargo vacío. Y cubrir un cargo no ejecutivo toma en promedio 39 días (SHRM). Hoy, dos de cada tres empresas contratan sin usar datos objetivos (Perzon IA, 2025).</p>
+    </div>
+  </div>
+</section>
+
+<section class="srv alt" id="s-acred">
+  <div class="in srv-g">
+    <figure class="srv-img"><div class="duo"><img class="a" src="img/acred-camion.jpg" alt="Camión forestal cargado de troncos en una carretera" style="object-position:55% 50%"><img class="b" src="img/perforacion.jpg" alt="Operador junto a un equipo de perforación en mina subterránea" style="object-position:60% 50%"></div></figure>
+    <div class="srv-txt">
+      <p class="eyebrow">Servicio Acreditación Laboral</p>
+      <h2>Que nadie quede detenido en la garita</h2>
+      <p class="lead">Acreditamos a quienes operan maquinaria, equipos y vehículos, con evaluación teórica y práctica según el estándar de cada mandante. Además, custodiamos la documentación de sus trabajadores y armamos y presentamos sus carpetas en los gestores de control de cada faena.</p>
+      <p class="mini">El cambio que genera</p>
+      <ul class="cambios">
+        <li><span><b>Ingreso al primer intento:</b> su gente llega con la acreditación que exige la faena.</span></li>
+        <li><span><b>Sin detener la operación:</b> evaluamos por grupo o por turno.</span></li>
+        <li><span><b>Respaldo ante auditorías:</b> registros y evidencias trazables de cada evaluación.</span></li>
+        <li><span><b>A la medida de cada mandante:</b> evaluamos según el estándar de la faena a la que entra su gente.</span></li>
+        <li><span><b>Menos coordinación:</b> exámenes y acreditación con un mismo proveedor y un mismo calendario.</span></li>
+        <li><span><b>Carpetas aprobadas al primer envío:</b> revisamos cada documento antes de subirlo a Webcontrol, Sucal, Workmate o SIGA.</span></li>
+      </ul>
+      <div class="formatos">
+        <div class="formato"><small>Masivo</small><p>Cuadrillas completas antes de una parada de planta o del inicio de un contrato.</p></div>
+        <div class="formato uno"><small>Individual</small><p>El operador o conductor que se suma a mitad de proyecto.</p></div>
+      </div>
+      <div class="caso"><span>Caso tipo</span><p>Una empresa de montaje industrial debe ingresar una cuadrilla a una parada de planta. Acredita a sus rigger y operadores por turno y llega al primer día con la documentación completa. La parada parte a la hora programada.</p></div>
+      <a class="btn linea" href="#contacto">Solicitar este servicio <span class="flecha">→</span></a>
+    </div>
+  </div>
+  <div class="in">
+    <div class="proc-r">
+      <p class="eyebrow">Gestión documental de acreditación</p>
+      <h3>Su gente acreditada, <b>sus carpetas al día</b></h3>
+      <ol class="pasos-r">
+        <li><span class="n">1</span><b>Custodia de la documentación</b><span>Resguardamos los documentos personales de cada trabajador: contratos, exámenes, certificaciones, licencias y capacitaciones.</span></li>
+        <li><span class="n">2</span><b>Chequeo de la información</b><span>Verificamos vigencias, datos y requisitos de cada documento antes de presentarlo, para evitar rechazos.</span></li>
+        <li><span class="n">3</span><b>Armado de carpetas</b><span>Ordenamos la carpeta de cada trabajador según lo que exige cada mandante y cada faena.</span></li>
+        <li><span class="n">4</span><b>Presentación en la plataforma</b><span>Cargamos las carpetas en el gestor de control del mandante y hacemos seguimiento hasta su aprobación.</span></li>
+      </ol>
+      <div class="gestores"><span>Trabajamos con los gestores de control</span><ul><li>Webcontrol</li><li>Sucal</li><li>Workmate</li><li>SIGA</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="srv rev" id="s-terreno">
+  <div class="in srv-g">
+    <figure class="srv-img"><img src="img/terreno.jpg" alt="Camioneta de Grupo Petrinovic para operativos en terreno"></figure>
+    <div class="srv-txt">
+      <p class="eyebrow">Operativos en terreno</p>
+      <h2>Si su gente no puede venir, vamos nosotros</h2>
+      <p class="lead">Realizamos evaluaciones psicosensométricas y certificaciones en las instalaciones de su empresa o directamente en faena, en cualquier punto del país.</p>
+      <p class="mini">El cambio que genera</p>
+      <ul class="cambios">
+        <li><span><b>Cero traslados:</b> sus trabajadores no dejan la faena para evaluarse.</span></li>
+        <li><span><b>Menos horas perdidas:</b> grupos completos evaluados en una misma jornada.</span></li>
+        <li><span><b>Información a la mano:</b> plataforma en línea disponible 24/7.</span></li>
+        <li><span><b>La faena no se detiene:</b> coordinamos las evaluaciones por turnos.</span></li>
+        <li><span><b>Cobertura nacional:</b> llegamos a obras, predios y faenas remotas en cualquier punto del país.</span></li>
+      </ul>
+      <div class="formatos">
+        <div class="formato"><small>Masivo</small><p>Jornadas en su faena para grupos completos, a partir de un mínimo de trabajadores por jornada.</p></div>
+        <div class="formato uno"><small>Individual</small><p>Si son pocas personas, las atendemos en nuestro centro de Providencia con hora agendada.</p></div>
+      </div>
+      <div class="caso"><span>Caso tipo</span><p>Una empresa forestal evalúa a sus operadores de maquinaria en el mismo predio, entre turnos. Nadie viaja a la ciudad, nadie pierde la jornada y los informes quedan disponibles en línea para prevención de riesgos.</p></div>
+      <a class="btn linea" href="#contacto">Solicitar este servicio <span class="flecha">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="ind" id="industrias">
+  <div class="in">
+    <div class="cab">
+      <p class="eyebrow">Industrias</p>
+      <h2>Conocemos las exigencias <b>de su rubro</b></h2>
+    </div>
+    <ul class="ind-g">
+      <li><img src="img/agricola.jpg" alt="Trabajador cargando cajas de uva en la vendimia"><div><b>Agrícola</b><span>Operativos en el predio durante la temporada, sin detener la cosecha.</span></div></li>
+      <li><img src="img/forestal.jpg" alt="Maquinaria forestal trabajando en un bosque"><div><b>Forestal</b><span>Operadores de maquinaria y conductores en faenas remotas.</span></div></li>
+      <li><img src="img/logistica.jpg" alt="Grúa horquilla cargando un camión en una bodega"><div><b>Logística</b><span>Conductores, operadores de grúa horquilla y sustancias peligrosas.</span></div></li>
+      <li><img src="img/construccion.jpg" alt="Trabajadores en una obra de construcción"><div><b>Construcción</b><span>Altura física, espacios confinados y operadores de maquinaria.</span></div></li>
+      <li><img src="img/montaje.jpg" alt="Soldador trabajando en una estructura de acero"><div><b>Montaje industrial</b><span>Rigger, trabajo en altura y acreditación para paradas de planta.</span></div></li>
+      <li><img src="img/mineria.jpg" alt="Camión minero en una faena a rajo abierto"><div><b>Minería</b><span>Altitud geográfica, ingreso a faena y certificación de operadores.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="proc" id="proceso">
+  <div class="in">
+    <div class="cab">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2>De la solicitud al resultado, <b>en cuatro pasos</b></h2>
+    </div>
+    <ol class="pasos">
+      <li><b>Solicitud</b><span>Nos cuenta qué cargos y cuántas personas necesita evaluar.</span></li>
+      <li><b>Agenda</b><span>Coordinamos fecha y lugar: nuestro centro o su faena.</span></li>
+      <li><b>Evaluación</b><span>Aplicamos los exámenes y pruebas que requiere cada cargo.</span></li>
+      <li><b>Resultados</b><span>Recibe los informes en línea y decide con información.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <div class="in">
+    <div class="cta-card">
+      <div>
+        <p class="eyebrow">Demos el primer paso</p>
+        <h2>Cuéntenos cuántas personas necesita evaluar</h2>
+        <p class="lead">Le respondemos con un plan a la medida de su operación: qué evaluar, dónde y en qué plazo.</p>
+      </div>
+      <ul class="datos">
+        <li><small>Correo</small><div class="v"><a id="dato-correo" href="mailto:fllancafil@petrinovic.com">fllancafil@petrinovic.com</a><button class="copiar" type="button" id="copiar-correo" data-de="dato-correo">Copiar</button></div></li>
+        <li><small>Teléfono</small><div class="v"><a id="dato-fono" href="tel:+56948184418">+56 9 4818 4418</a><button class="copiar" type="button" id="copiar-fono" data-de="dato-fono">Copiar</button></div></li>
+        <li><small>Centro de Salud Laboral</small><div class="v"><span>Av. Los Leones 1707, Providencia, Santiago</span></div></li>
+        <li><small>Sitios web</small><div class="v"><span>www.petrinovic.com<br>www.certificacionespetrinovic.cl</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="in">
+    <img src="img/logo-color.png" alt="Grupo Petrinovic">
+    <p>Los casos tipo son ejemplos ilustrativos de cómo se aplica cada servicio; no describen a un cliente en particular. Cifras: Superintendencia de Seguridad Social (SUSESO), balance e informe anual de seguridad y salud en el trabajo 2025, publicados en abril de 2026; estudio de valoración de empleadores de Ipsos Chile para ChileValora (2024, la edición más reciente); ChileValora, evaluación de impacto en instaladores eléctricos y de gas (2026) y balance 2025; INE, indicadores de rotación y permanencia laboral, junio de 2025; Gallup (2019) sobre el costo de reemplazar a un trabajador; SHRM, informe de reclutamiento 2025, sobre el tiempo para cubrir un cargo; Jobvite (2018) sobre la rotación en los primeros 90 días; y estudio “El costo invisible del talento” de Perzon IA (2025). El ejemplo de costos es un cálculo ilustrativo con esas cifras.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+document.querySelectorAll('.copiar').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.de),t=el.textContent;
+    var listo=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar';},1600);};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(listo).catch(sel);}else{sel();}
+  });
+});
+</script>
+</body>
+</html>
